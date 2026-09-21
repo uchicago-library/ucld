@@ -1,0 +1,57 @@
+{#
+  Header for this documentation site.
+
+  Structure and styling mirror the production Library header so the two read as
+  one site: a white logo bar above a maroon navigation bar. Styles live in
+  src/styles/meta/_docs-header.scss.
+
+  Which header a page gets:
+  - This one, on the documentation site — design_system/, methodology/, the
+    home page, and the index pages that introduce a section.
+  - header.html, the production Library website header, on the mockups and
+    exported pages themselves. Those show a real Library interface and need
+    its real chrome to be worth looking at.
+
+  Ids are prefixed docs- because the production header claims #header,
+  #global-navbar and #navbar-shortcuts.
+#}
+{%- set docsSections = [
+  { label: "Design System", url: "/design_system/" },
+  { label: "Token Tables",  url: "/design_system/token-tables/" },
+  { label: "Mockups",       url: "/design_mockups/" },
+  { label: "Pages",         url: "/pages/" },
+  { label: "Methodology",   url: "/methodology/" }
+] %}
+<header id="docs-header" role="banner">
+  <div class="logo-bar bg-white">
+    <div class="container-md">
+      <div class="d-flex justify-content-between align-items-center py-2">
+        <a class="navbar-brand m-0 d-flex align-items-center" href="{{ '/' | url }}">
+          <img src="https://www.lib.uchicago.edu/web-resources/img/color-logo.png" alt="University of Chicago Library">
+          <span class="docs-header-wordmark">Design System</span>
+        </a>
+
+        <button class="navbar-toggler d-md-none border-0" type="button" data-bs-toggle="collapse"
+                data-bs-target="#docs-header-nav" aria-controls="docs-header-nav"
+                aria-expanded="false" aria-label="Toggle documentation navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-md navbar-dark docs-navbar p-0" aria-label="Documentation">
+    <div class="container-md">
+      <div class="collapse navbar-collapse" id="docs-header-nav">
+        <ul class="navbar-nav" role="list">
+          {%- for section in docsSections %}
+          {%- set isWithin = section.url in page.url %}
+          <li class="nav-item">
+            <a class="nav-link{% if isWithin %} active{% endif %}" href="{{ section.url | url }}"{% if page.url == section.url %} aria-current="page"{% endif %}>{{ section.label }}</a>
+          </li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
