@@ -1,0 +1,65 @@
+// Documentation site header — documentation-only component.
+// Lives in styles/meta/ and is imported by meta.scss, never by main.scss.
+// Markup lives in src/_includes/meta/docs-header.html.
+//
+// This mirrors the production Library header in components/_header.scss so the
+// two read as one site. It is a separate component rather than a reuse of that
+// one because the production navbar is styled through #global-navbar, an id
+// that must not appear twice and does not belong to this project's own chrome.
+// The logo bar needs no rules here: .logo-bar is a product class in main.css,
+// which every documentation page already loads.
+
+// Level 3 tokens
+$docs-navbar-bg: $primary;
+$docs-navbar-bg-active: darken($primary, 10%);
+
+.docs-navbar {
+    background-color: $docs-navbar-bg;
+    --bs-navbar-color: #fff;
+    --bs-navbar-hover-color: #fff;
+    --bs-navbar-active-color: #fff;
+    --bs-navbar-nav-link-padding-x: 0.8rem;
+    --bs-nav-link-font-size: 0.9rem;
+    --bs-nav-link-font-weight: 400;
+
+    a:visited {
+        color: var(--bs-navbar-color);
+    }
+
+    .nav-link {
+        @include transition(background-color 0.2s ease);
+        white-space: nowrap;
+
+        &:hover,
+        &:focus,
+        &.active {
+            background-color: $docs-navbar-bg-active;
+        }
+
+        @media (max-width: 767.98px) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-left: $spacer;
+            padding-right: $spacer;
+        }
+    }
+
+    // Let the collapsed menu span the full width on small screens, matching
+    // the production header rather than sitting inside the container gutter.
+    @media (max-width: 767.98px) {
+        .navbar-collapse {
+            margin-left: calc(var(--bs-gutter-x) * 0.5 * -1);
+            margin-right: calc(var(--bs-gutter-x) * 0.5 * -1);
+        }
+    }
+}
+
+// Wordmark distinguishing this documentation site from the production site it
+// documents. Sits beside the logo, which keeps its production sizing.
+.docs-header-wordmark {
+    color: $primary;
+    font-weight: 600;
+    line-height: 1.1;
+    border-left: 1px solid $light;
+    padding-left: 0.75rem;
+    margin-left: 0.75rem;
+}

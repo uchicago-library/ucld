@@ -39,6 +39,15 @@ If you notice a documented claim that has become false, correct it in the same c
 
 These fail quietly. None of them produces an error you would notice.
 
+### Headers
+
+There are two, and the wrong one still builds and still looks plausible.
+
+- `meta/docs-header.html` is this documentation site's header. Every page that documents the system uses it, including the section index pages inside `design_mockups/` and `pages/` — those are navigation, not specimens. `base.njk` includes it, so pages using the layout are already correct.
+- `header.html` is the production Library website header. Only the mockups and exported pages themselves use it.
+
+The split is what the page *is*, not which folder it sits in. Only a page that hand-rolls its include chain has to choose, and copying a nearby page is how the wrong one spreads.
+
 ### Markdown pages
 
 - Nunjucks runs **before** Markdown. Wrap any template syntax you want to *display* in `{% raw %}`.

@@ -57,7 +57,7 @@ src/
 │   └── tokens.js              # Generates the Token Tables page from the SCSS
 ├── _includes/                 # Reusable partials
 │   ├── base.njk               # Layout for documentation pages
-│   ├── header.html            # Site header
+│   ├── header.html            # Production Library website header
 │   ├── footer.html            # Site footer
 │   ├── breadcrumb.html        # Breadcrumb trail
 │   ├── child-pages-list.html  # Generated list of a section's pages
@@ -106,6 +106,17 @@ layout: base.njk
 Markdown and HTML render identically through this layout. Use `.md` for prose; use `.html` when the rendered markup *is* the documentation — live demos, type specimens, or anything needing a `<style>` or `<script>` block.
 
 A few pages still hand-roll the include chain instead of using the layout, because their demos need to escape the constrained prose column. `implementation/layouts.html` and `token-tables.html` are the examples.
+
+### Two headers
+
+The site uses one of two headers, and which one a page gets is a deliberate choice rather than a default. The dividing line is not the folder but what the page *is*.
+
+- `meta/docs-header.html` is this documentation site's own header. Every page that documents the system uses it: `design_system/`, `methodology/`, the home page, and the index pages that introduce a section — including the ones inside `design_mockups/` and `pages/`, which are navigation rather than specimens. `base.njk` supplies it, so a page using the layout is already correct.
+- `header.html` is the production Library website header. Only the mockups and exported pages themselves use it, because they show a real Library interface and need its real chrome to be worth looking at.
+
+`docs-header.html` lives in `_includes/meta/` and is styled from `styles/meta/_docs-header.scss`, following the rule that anything existing only to document the system stays out of the product. It mirrors the production header visually so the two read as one site.
+
+A page that hand-rolls its include chain has to pick. Including the wrong one produces a page that still builds and still looks plausible, so check it against the rule above rather than copying whichever nearby page came to hand.
 
 ## What the Build Generates
 
