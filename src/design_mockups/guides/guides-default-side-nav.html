@@ -7,7 +7,7 @@ is_guide: true
 <!-- Default Side-Nav Layout -->
 
 <body class="s-lg-guide-body">
-    {{skip_link}}
+    {% include "libapps/skip-link.html" %} {{skip_link}}
 
     {{ADMIN_CMD_BAR}}
 
@@ -53,7 +53,7 @@ is_guide: true
             </div>
             <div class="col-md-9">
                 <div class="s-lg-tab-content">
-                    <div id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
+                    <main id="s-lg-guide-main" class="tab-pane active" tabindex="-1">
                         <div class="row s-lg-row">
                             <div id="s-lg-col-1" class="col-md-8">
                                 <div class="s-lg-col-boxes">
@@ -68,7 +68,7 @@ is_guide: true
                             </div>
                         </div>
 
-                    </div>
+                    </main>
                 </div>
                 {% include "libapps/page_prev_next_links.html" %}{{page_prev_next_links}}
 

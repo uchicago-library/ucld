@@ -1,5 +1,10 @@
 // This is the main entry point to compile a LibApps override CSS file.
 // Pages consuming this output are expected to already load Bootstrap 5 from LibApps.
+//
+// The commented-out imports below are load-bearing documentation: the design
+// system page "Styling Springshare Pages" tells authors which components are
+// unavailable here, and that list is this list. If you enable or disable an
+// import, update src/design_system/implementation/springshare.md to match.
 
 @import url("https://uchicago-brand-fonts.s3.us-east-2.amazonaws.com/UChicagoSansSerif.css");
 @import url("https://www.lib.uchicago.edu/web-resources/css/uchicagoSansSerif.css");
