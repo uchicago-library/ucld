@@ -6,7 +6,7 @@ layout: base.njk
 
 ## Why there is a second stylesheet
 
-Springshare's LibApps products serve their own copy of Bootstrap 5 and their own base styles, and neither can be removed. `main-libapps.css` is therefore an override sheet rather than a full build: it assumes Bootstrap is already present and corrects what LibApps gets wrong, instead of shipping the framework a second time.
+Springshare's LibApps products serve their own copy of Bootstrap 5 and their own base styles, and neither can be removed. `main-libapps.css` is therefore an override sheet rather than a full build: it assumes Bootstrap is already present and corrects styles to the UChicago branding, instead of shipping the framework a second time.
 
 The main Library site uses `main.css`. The two compile from the same tokens but are not interchangeable. See [System Architecture]({{ '/methodology/architecture/' | url }}) for all three stylesheet entry points.
 
@@ -26,7 +26,7 @@ In LibGuides it goes in the **Look & Feel → Custom JS/CSS** panel, which alrea
 
 ## What is not available
 
-This is the part that catches people out. `main-libapps.scss` compiles a deliberate subset, because LibApps supplies the rest at runtime.
+`main-libapps.scss` compiles a deliberate subset, because LibApps supplies the rest at runtime.
 
 | Not compiled in | Consequence |
 | --- | --- |
