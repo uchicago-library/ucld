@@ -60,7 +60,7 @@ The rest is judgement and needs a person — whether alt text is *meaningful*, w
 
 ## Design Principles
 
-**Brand.** Designs use the UChicago palette and UChicago Sans Serif. Colour values are never transcribed by hand — the [Token Tables]({{ '/design_system/token-tables/' | url }}) page is generated from the stylesheets and is the reference.
+**Brand.** Designs use the UChicago palette and UChicago Sans Serif. Colour values are never transcribed by hand — the [Token Tables]({{ '/design_system/implementation/token-tables/' | url }}) page is generated from the stylesheets and is the reference.
 
 **Restraint.** Uncluttered layouts, generous whitespace, and purposeful typography and imagery. Motion is used sparingly and always respects a reduced-motion preference.
 

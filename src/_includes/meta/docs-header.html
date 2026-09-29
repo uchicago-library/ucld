@@ -12,12 +12,12 @@
     exported pages themselves. Those show a real Library interface and need
     its real chrome to be worth looking at.
 
-  Ids are prefixed docs- because the production header claims #header,
-  #global-navbar and #navbar-shortcuts.
+  Ids are prefixed docs- so they cannot collide with the production header,
+  which claims #global-navbar and #navbar-shortcuts.
 #}
 {%- set docsSections = [
   { label: "Design System", url: "/design_system/" },
-  { label: "Token Tables",  url: "/design_system/token-tables/" },
+  { label: "Token Tables",  url: "/design_system/implementation/token-tables/" },
   { label: "Mockups",       url: "/design_mockups/" },
   { label: "Pages",         url: "/pages/" },
   { label: "Methodology",   url: "/methodology/" }
@@ -40,7 +40,7 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-md navbar-dark docs-navbar p-0" aria-label="Documentation">
+  <nav class="navbar navbar-expand-md navbar-dark global-navbar p-0" aria-label="Documentation">
     <div class="container-md">
       <div class="collapse navbar-collapse" id="docs-header-nav">
         <ul class="navbar-nav" role="list">

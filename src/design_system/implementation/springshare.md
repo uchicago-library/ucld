@@ -18,7 +18,7 @@ In LibGuides it goes in the **Look & Feel → Custom JS/CSS** panel, which alrea
 
 ## What you can rely on
 
-**Every design token.** Both stylesheets compile from the same `_variables.scss` and publish the same 29 `--ucl-*` custom properties. Anything on the [Token Tables]({{ '/design_system/token-tables/' | url }}) page is available on a Springshare page unchanged.
+**Every design token.** Both stylesheets compile from the same `_variables.scss` and publish the same 29 `--ucl-*` custom properties. Anything on the [Token Tables]({{ '/design_system/implementation/token-tables/' | url }}) page is available on a Springshare page unchanged.
 
 **The Bootstrap theme colours.** This sheet rewrites `--bs-primary`, `--bs-secondary` and the other theme slots to the brand palette, so the classes LibApps' own Bootstrap provides — `.text-primary`, `.bg-primary`, `.btn-primary` — pick up UChicago colours with no further work.
 

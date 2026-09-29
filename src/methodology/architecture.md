@@ -10,8 +10,8 @@ layout: base.njk
 - **Elements** (buttons, forms, inputs) are styled with Bootstrap classes first. Add a custom class only when Bootstrap genuinely cannot express the need.
 - **Global components** (header, footer, breadcrumb) are HTML partials in `src/_includes/`.
 - **Design system pages** (`src/design_system/`) document the system: tokens, components, and usage guidance.
-- **Mockup pages** (`src/design_mockups/`) are for brainstorming layouts. Page-specific styling goes in a `<style>` block at the top of the file.
-- **Application pages** (`src/pages/`) hold markup exported from real applications, kept so the stylesheets can be validated against the HTML they actually have to style.
+- **Demonstration pages** (`src/pages/`) show the system in place at full page width: our own patterns, and markup reproduced from real applications so the stylesheets can be validated against the HTML they actually have to style. A documentation page states a rule and shows the markup; the demo here shows it working.
+- **Mockup pages** (`src/design_mockups/`) are experiments and, by default, not prescriptive. Page-specific styling goes in a `<style>` block at the top of the file.
 
 ## The Three Layers of Styling
 
@@ -39,7 +39,7 @@ Tokens are SCSS and CSS variables organised into three levels of abstraction, so
 
 ### Where token documentation lives
 
-The [Token Tables]({{ '/design_system/token-tables/' | url }}) page is generated from the stylesheets at build time by `src/_data/tokens.js`, so no token value, CSS variable name or utility class is ever transcribed by hand. The same generator publishes `/design_system/tokens.json` for tooling that wants the set directly.
+The [Token Tables]({{ '/design_system/implementation/token-tables/' | url }}) page is generated from the stylesheets at build time by `src/_data/tokens.js`, so no token value, CSS variable name or utility class is ever transcribed by hand. The same generator publishes `/design_system/tokens.json` for tooling that wants the set directly.
 
 The authoring conventions that drive it — the comment markers, the naming rule, and the guidance on when to use an SCSS variable versus a CSS variable — are documented in the header of `src/styles/_variables.scss`, because that is the file you are looking at when you need them.
 
@@ -70,11 +70,11 @@ src/
 │   ├── foundation/            # Why the system is the way it is
 │   ├── guidelines/            # How to use it
 │   ├── implementation/        # Components, tokens, typography, layouts
-│   ├── token-tables.html      # Generated token reference
+│   │   └── token-tables.html  # Generated token reference
 │   └── tokens.json.njk        # Machine-readable token endpoint
-├── design_mockups/            # Full-page mockups, grouped by topic
+├── design_mockups/            # Experiments, grouped by topic. Not prescriptive
 ├── methodology/               # How to work on this project (this folder)
-├── pages/                     # Markup exported from real applications
+├── pages/                     # Demonstrations of the system in place
 ├── styles/
 │   ├── _variables.scss        # Level 1 and 2 tokens, Bootstrap overrides
 │   ├── main.scss              # Product entry point

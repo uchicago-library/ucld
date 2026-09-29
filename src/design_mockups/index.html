@@ -1,5 +1,6 @@
 ---
 title: "Page Mockups"
+description: "Experimental explorations of layout and interaction. Not prescriptive by default."
 ---
 
 {% include "meta/document-start.html" %}
@@ -10,7 +11,13 @@ title: "Page Mockups"
 <main id="main-content" tabindex="-1" class="container-md py-4 mb-5">
   <div class="col-lg-10 mx-auto">
     <h1>Page Mockups</h1>
-    <p>Exploratory and validation page mockups used to test layout directions and interactions.</p>
+    <p class="lead">Experimental explorations of layout and interaction. Not prescriptive by default.</p>
+
+    <div class="alert alert-warning" role="note">
+      <strong>These are experiments.</strong> By default, a mockup is not prescriptive.
+    </div>
+
+    <p>For pages that show the system as it is meant to be used, see <a href="{{ '/pages/' | url }}">Pages</a>. For the rules themselves, see the <a href="{{ '/design_system/' | url }}">Design System</a>.</p>
 
     {% for section in collections.all | sort(false, false, 'data.title') %}
       {% if '/design_mockups/' in section.url and section | isIndexPage and section.url != page.url %}

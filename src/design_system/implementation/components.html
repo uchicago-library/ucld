@@ -6,181 +6,181 @@ layout: base.njk
 
 <!-- Buttons Section -->
 <section id="section-buttons">
-<h2>Buttons</h2>
+  <h2>Buttons</h2>
 
-<p>Bootstrap's button classes cover variant, hierarchy, and size. Each choice should be deliberate — buttons communicate affordance and priority at a glance.</p>
+  <p>Bootstrap's button classes cover variant, hierarchy, and size. Each choice should be deliberate — buttons communicate affordance and priority at a glance.</p>
 
-<h3>Hierarchy</h3>
+  <h3>Hierarchy</h3>
 
-<p>There is exactly one <code>.btn-primary</code> per view. Standard actions use <code>.btn-default</code> (alias of <code>.btn-outline-secondary</code>).</p>
+  <p>There is exactly one <code>.btn-primary</code> per view. Standard actions use <code>.btn-default</code> (alias of <code>.btn-outline-secondary</code>).</p>
 
-<ul class="list-unstyled">
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-outline-secondary btn-default">.btn-default</button>
-      </div>
-      <div class="col-12 col-sm">
-        <strong>Default action</strong>
-        <p>Use for all standard actions. In this system, <code>.btn-default</code> maps to <code>.btn-outline-secondary</code>.</p>
-      </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-primary">.btn-primary</button>
-      </div>
-      <div class="col-12 col-sm">
-        <strong>Primary CTA</strong>
-        <p>Reserved for the single primary call to action per view.</p>
-      </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row bg-dark rounded text-white g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <div class="p-2">
-          <button class="btn btn-outline-light btn-outline-white">.btn-outline-white</button>
+  <ul class="list-unstyled">
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-outline-secondary btn-default">.btn-default</button>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Default action</strong>
+          <p>Use for all standard actions. In this system, <code>.btn-default</code> maps to <code>.btn-outline-secondary</code>.</p>
         </div>
       </div>
-      <div class="col-12 col-sm">
-        <strong>Image-overlay CTA</strong>
-        <p>Reserved for specially created CTA components where the background is a darkened image.</p>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-primary">.btn-primary</button>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Primary CTA</strong>
+          <p>Reserved for the single primary call to action per view.</p>
+        </div>
       </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-outline-danger border-2 btn-danger-x"><i class="fa-solid fa-exclamation me-2" aria-hidden="true"></i>btn-danger-x</button>
+    </li>
+    <li class="py-3">
+      <div class="row bg-dark rounded text-white g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <div class="p-2">
+            <button class="btn btn-outline-light btn-outline-white">.btn-outline-white</button>
+          </div>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Image-overlay CTA</strong>
+          <p>Reserved for specially created CTA components where the background is a darkened image.</p>
+        </div>
       </div>
-      <div class="col-12 col-sm">
-        <strong>Destructive action</strong>
-        <p>Use <code>btn-danger-x</code> (<code>.btn-outline-danger.border-2</code>) and pair it with <code>.fa-solid.fa-exclamation.me-1</code>. Do not use filled <code>.btn-danger</code>.</p>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-outline-danger border-2 btn-danger-x"><i class="fa-solid fa-exclamation me-2" aria-hidden="true"></i>btn-danger-x</button>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Destructive action</strong>
+          <p>Use <code>btn-danger-x</code> (<code>.btn-outline-danger.border-2</code>) and pair it with <code>.fa-solid.fa-exclamation.me-1</code>. Do not use filled <code>.btn-danger</code>.</p>
+        </div>
       </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <p>The <code>.btn</code> classes are designed for <code>&lt;button&gt;</code> elements, but they can also be used on <code>&lt;a&gt;</code> or <code>&lt;input&gt;</code> elements when needed.</p>
-  </li>
-  <li class="py-3">
-    <p>When an <code>&lt;a&gt;</code> element with button styling triggers in-page functionality rather than navigation, add <code>role="button"</code> so assistive technologies announce the correct purpose.</p>
-  </li>
-</ul>
+    </li>
+    <li class="py-3">
+      <p>The <code>.btn</code> classes are designed for <code>&lt;button&gt;</code> elements, but they can also be used on <code>&lt;a&gt;</code> or <code>&lt;input&gt;</code> elements when needed.</p>
+    </li>
+    <li class="py-3">
+      <p>When an <code>&lt;a&gt;</code> element with button styling triggers in-page functionality rather than navigation, add <code>role="button"</code> so assistive technologies announce the correct purpose.</p>
+    </li>
+  </ul>
 
-<h3>Size</h3>
+  <h3>Size</h3>
 
-<ul class="list-unstyled">
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-outline-secondary btn-default">.btn-default</button>
+  <ul class="list-unstyled">
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-outline-secondary btn-default">.btn-default</button>
+        </div>
+        <div class="col-12 col-sm">
+          <p>All standard UI contexts — forms, modals, cards, toolbars.</p>
+        </div>
       </div>
-      <div class="col-12 col-sm">
-        <p>All standard UI contexts — forms, modals, cards, toolbars.</p>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-outline-secondary btn-default btn-sm">.btn-default.btn-sm</button>
+        </div>
+        <div class="col-12 col-sm">
+          <p>Dense UI where space is constrained — tables, inline actions, tight toolbars. Not for emphasis.</p>
+        </div>
       </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-outline-secondary btn-default btn-sm">.btn-default.btn-sm</button>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-default btn-lg">.btn-default.btn-lg</button>
+        </div>
+        <div class="col-12 col-sm">
+          <p>Primary CTA in a hero or empty state only — where the button is the focal point of the layout.</p>
+        </div>
       </div>
-      <div class="col-12 col-sm">
-        <p>Dense UI where space is constrained — tables, inline actions, tight toolbars. Not for emphasis.</p>
-      </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-default btn-lg">.btn-default.btn-lg</button>
-      </div>
-      <div class="col-12 col-sm">
-        <p>Primary CTA in a hero or empty state only — where the button is the focal point of the layout.</p>
-      </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
 
-<h3>Unused</h3>
+  <h3>Unused</h3>
 
-<ul class="list-unstyled">
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-secondary" disabled>.btn-secondary</button>
+  <ul class="list-unstyled">
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-secondary" disabled>.btn-secondary</button>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Not used in this system</strong>
+          <p><code>.btn-secondary</code> ships with Bootstrap but is not used in this design system.</p>
+        </div>
       </div>
-      <div class="col-12 col-sm">
-        <strong>Not used in this system</strong>
-        <p><code>.btn-secondary</code> ships with Bootstrap but is not used in this design system.</p>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-info" disabled>.btn-info</button>
+        </div>
+        <div class="col-12 col-sm">
+          <strong>Active state in some elements</strong>
+          <p><code>.btn-info</code> active styling is baked into tab and navigation components. Do not apply it directly to standalone buttons.</p>
+        </div>
       </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-info" disabled>.btn-info</button>
+    </li>
+    <li class="py-3">
+      <div class="row g-3 align-items-center">
+        <div class="col-12 col-sm-auto">
+          <button class="btn btn-link" disabled>.btn-link</button>
+        </div>
+        <div class="col-12 col-sm">
+          <p>Do not use <code>.btn-link</code>. If the action navigates, use an <code>&lt;a&gt;</code> element.</p>
+        </div>
       </div>
-      <div class="col-12 col-sm">
-        <strong>Active state in some elements</strong>
-        <p><code>.btn-info</code> active styling is baked into tab and navigation components. Do not apply it directly to standalone buttons.</p>
-      </div>
-    </div>
-  </li>
-  <li class="py-3">
-    <div class="row g-3 align-items-center">
-      <div class="col-12 col-sm-auto">
-        <button class="btn btn-link" disabled>.btn-link</button>
-      </div>
-      <div class="col-12 col-sm">
-        <p>Do not use <code>.btn-link</code>. If the action navigates, use an <code>&lt;a&gt;</code> element.</p>
-      </div>
-    </div>
-  </li>
-</ul>
+    </li>
+  </ul>
 
 </section>
 
 <!-- Forms Section -->
 <section id="section-forms">
   <h2>Forms</h2>
-      <h3>Text Input</h3>
-      <div class="mb-3">
-        <label for="textInput" class="form-label">Text Input</label>
-        <input type="text" class="form-control" id="textInput" placeholder="Enter text">
-      </div>
+  <h3>Text Input</h3>
+  <div class="mb-3">
+    <label for="textInput" class="form-label">Text Input</label>
+    <input type="text" class="form-control" id="textInput" placeholder="Enter text">
+  </div>
 
-      <h3>Checkboxes</h3>
-      <div class="form-check mb-2">
-        <input class="form-check-input" type="checkbox" id="check1" checked>
-        <label class="form-check-label" for="check1">Option 1</label>
-      </div>
-      <div class="form-check mb-3">
-        <input class="form-check-input" type="checkbox" id="check2">
-        <label class="form-check-label" for="check2">Option 2</label>
-      </div>
-    </div>
+  <h3>Checkboxes</h3>
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="checkbox" id="check1" checked>
+    <label class="form-check-label" for="check1">Option 1</label>
+  </div>
+  <div class="form-check mb-3">
+    <input class="form-check-input" type="checkbox" id="check2">
+    <label class="form-check-label" for="check2">Option 2</label>
+  </div>
+</div>
 
-    <div class="col-md-6">
-      <h3>Select</h3>
-      <select class="form-select mb-3" aria-label="Choose an option">
-        <option selected>Choose an option</option>
-        <option>Option 1</option>
-        <option>Option 2</option>
-      </select>
+<div class="col-md-6">
+  <h3>Select</h3>
+  <select class="form-select mb-3" aria-label="Choose an option">
+    <option selected>Choose an option</option>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
 
-      <h3>Radio Buttons</h3>
-      <div class="form-check mb-2">
-        <input class="form-check-input" type="radio" name="radio" id="radio1" checked>
-        <label class="form-check-label" for="radio1">Option A</label>
-      </div>
-      <div class="form-check">
-        <input class="form-check-input" type="radio" name="radio" id="radio2">
-        <label class="form-check-label" for="radio2">Option B</label>
-      </div>
-    </div>
+  <h3>Radio Buttons</h3>
+  <div class="form-check mb-2">
+    <input class="form-check-input" type="radio" name="radio" id="radio1" checked>
+    <label class="form-check-label" for="radio1">Option A</label>
+  </div>
+  <div class="form-check">
+    <input class="form-check-input" type="radio" name="radio" id="radio2">
+    <label class="form-check-label" for="radio2">Option B</label>
+  </div>
+</div>
   </div>
 
   <hr class="my-5 border-0">
@@ -449,6 +449,15 @@ layout: base.njk
     <span class="badge rounded-pill bg-secondary me-2">Secondary Pill</span>
     <span class="badge rounded-pill bg-success">Success Pill</span>
   </div>
+
+  <hr class="my-5 border-0">
+</section>
+
+<!-- Navigation Section -->
+<section id="section-navigation">
+  <h2>Navigation</h2>
+
+  <p>Navs, tabs, pills and breadcrumbs are Bootstrap's, used unmodified — follow <a href="https://getbootstrap.com/docs/5.3/components/navs-tabs/" target="_blank" rel="noopener">Bootstrap's documentation</a> and keep the ARIA attributes its examples carry. Two house rules: give every <code>&lt;nav&gt;</code> its own <code>aria-label</code>, since a page usually has several; and end a breadcrumb on the current page, unlinked. The site's own header and footer are covered in <a href="{{ '/design_system/implementation/site-chrome/' | url }}">Site Chrome</a>.</p>
 
   <hr class="my-5 border-0">
 </section>

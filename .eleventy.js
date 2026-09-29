@@ -23,6 +23,14 @@ module.exports = function (eleventyConfig) {
   // Copy assets to output
   eleventyConfig.addPassthroughCopy("src/assets");
 
+  // Also publish the Library favicon at the site root. Browsers request
+  // /favicon.ico implicitly, without reading the <link> in the document head,
+  // so without this copy that request 404s on every page. The file is a
+  // byte-identical vendored copy of the one lib.uchicago.edu serves.
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/images/favicon-black.ico": "favicon.ico",
+  });
+
   // src/assets/README.md documents the asset folder for contributors. Without
   // this it is treated as a template and published as a site page, since .md
   // is a templateFormat. Passthrough copy still ships the raw file.

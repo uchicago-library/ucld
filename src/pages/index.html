@@ -1,5 +1,6 @@
 ---
 title: "Pages"
+description: "Complete pages rendered with the design system, for demonstration and visual validation."
 ---
 
 {% include "meta/document-start.html" %}
@@ -8,15 +9,22 @@ title: "Pages"
 {% include "breadcrumb.html" %}
 
 <main id="main-content" tabindex="-1" class="container-md py-4 mb-5">
-  <h1>Pages</h1>
-  <p>Application-exported pages organized as a standalone project section.</p>
-  <ul>
-  {% for p in collections.all | sort(false, false, 'data.title') %}
-    {% if page.url in p.url and p | isIndexPage and p.url != page.url %}
-    <li><a href="{{ p.url | url }}">{{ p.data.title }}</a></li>
-    {% endif %}
-  {% endfor %}
-  </ul>
+  <div class="col-lg-10 mx-auto">
+    <h1>Pages</h1>
+    <p class="lead">Complete pages rendered with the design system, for demonstration and visual validation.</p>
+
+    <p>This is what the system looks like in place. For exploratory work that has not been adopted, see <a href="{{ '/design_mockups/' | url }}">Page Mockups</a>.</p>
+
+    {% for section in collections.all | sort(false, false, 'data.title') %}
+      {% if page.url in section.url and section | isIndexPage and section.url != page.url %}
+    <section class="mb-4">
+      <h2><a href="{{ section.url | url }}">{{ section.data.title }}</a></h2>
+      {% set parentUrl = section.url %}
+      {% include "child-pages-list.html" %}
+    </section>
+      {% endif %}
+    {% endfor %}
+  </div>
 </main>
 
 {% include "footer.html" %}

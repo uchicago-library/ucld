@@ -6,6 +6,13 @@
     --bs-btn-border-radius: var(--bs-border-radius-pill);
 }
 
+/// The large button, carrying semibold weight. A button at this size is a
+/// page's main call to action, and the heavier weight is what makes it read
+/// as one at a glance. The default and small sizes keep the body weight.
+.btn-lg {
+    --bs-btn-font-weight: #{$font-weight-semibold};
+}
+
 /// The standard action. Use for every button on a view except the one primary
 /// action, which is `.btn-primary`. Reads as an outlined secondary button.
 .btn-default {

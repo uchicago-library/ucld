@@ -46,7 +46,7 @@ Use IDs for things that are unique on the page; use classes for anything that re
 - **Write a real `description`.** It is published in `/llms.txt` and in the Markdown copy of the page.
 - **Use semantic elements:** `<header>`, `<main>`, `<article>`, `<nav>`.
 - **No inline styles.** Page-specific demo styling goes in a `<style>` block at the top of the file, and moves to a dedicated SCSS file once it settles.
-- **Do not add code examples** to documentation pages. The Markdown copies generated for each reference page already carry the real markup.
+- **Code examples depend on the format.** A reference `.html` page carries none — it demonstrates itself, and its generated Markdown twin already holds the real markup. A prose `.md` page has no twin, so a short snippet is how it supplies markup. Reach for one where the reader would otherwise have to work out which part of a page is structural and which is the documentation around it.
 
 Markdown pages are processed by Nunjucks before Markdown, so any literal template syntax you want to display has to be wrapped in a raw block. Internal links go through the `url` filter so the path prefix is applied. Use fenced code blocks; indented ones are disabled.
 
@@ -68,11 +68,12 @@ Keep it minimal. JavaScript is justified for initialising Bootstrap behaviour th
 
 | Content | Location |
 | --- | --- |
-| Component demo | `src/design_system/implementation/` |
+| Component documentation | `src/design_system/implementation/` |
+| Live demo of a pattern | `src/pages/<group>/`, beside an `index.html` for the group |
 | Usage guidance | `src/design_system/guidelines/` |
 | Principles and research | `src/design_system/foundation/` |
 | Process documentation | `src/methodology/` |
-| Full-page mockup | `src/design_mockups/<topic>/` |
+| Experimental mockup | `src/design_mockups/<topic>/` |
 | Component SCSS | `src/styles/components/_name.scss`, imported in `main.scss` |
 | Documentation-only SCSS | `src/styles/meta/_name.scss`, imported in `meta.scss` |
 | Global element styles | `src/styles/base/_global.scss` |

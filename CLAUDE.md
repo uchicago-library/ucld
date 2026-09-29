@@ -56,6 +56,7 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 - Leave a blank line before a `---` horizontal rule, or it turns the line above into an `<h2>`.
 - **Do not put block-level HTML in a `.md` file.** Markdown output is flat and `meta/_documentation.scss` depends on that. If a Markdown page needs a live demo, move the markup to a partial and pull it in with one `{% include %}`. Inline HTML inside a table cell is fine.
 - Pipe tables, heading IDs and `target="_blank"` on external links are all added automatically.
+- Heading IDs are generated from the heading text, so a heading whose words match a landmark id collides with it and the build fails on the duplicate. `## Main content` produces `id="main-content"`, which every page already has. Qualify the wording rather than dropping the heading.
 
 ### SCSS
 
@@ -92,8 +93,9 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 ### File boundaries
 
 - **Never modify `_site/`.** It is generated. All work happens in `src/`.
-- **Do not add code examples** to documentation pages. The generated Markdown copies already carry the real markup.
-- Each bespoke element or component should have a demo page under `src/design_system/implementation/`.
+- **Code examples depend on the format.** A reference `.html` page carries none: it demonstrates itself, and its generated Markdown twin already holds the real markup. A prose `.md` page has no twin, so a short snippet is the only way it can supply markup — use one where the reader would otherwise have to guess which part of a page is structural.
+- **Live demos go in `src/pages/`, not on a documentation page.** A documentation page states the rule and shows the markup; the demo shows it working at full page width.
+- `src/pages/` is for **demonstration** — our own patterns rendered in place, and vendor markup reproduced so the stylesheets can be validated against it. `src/design_mockups/` is for **experiments**, which by default are not prescriptive.
 
 ### HTML
 
