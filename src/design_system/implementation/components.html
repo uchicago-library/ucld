@@ -12,17 +12,17 @@ layout: base.njk
 
   <h3>Hierarchy</h3>
 
-  <p>There is exactly one <code>.btn-primary</code> per view. Standard actions use <code>.btn-default</code> (alias of <code>.btn-outline-secondary</code>).</p>
+  <p>There is exactly one <code>.btn-primary</code> per view. Standard actions use <code>.btn-default</code>.</p>
 
   <ul class="list-unstyled">
     <li class="py-3">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-sm-auto">
-          <button class="btn btn-outline-secondary btn-default">.btn-default</button>
+          <button class="btn btn-default">.btn-default</button>
         </div>
         <div class="col-12 col-sm">
           <strong>Default action</strong>
-          <p>Use for all standard actions. In this system, <code>.btn-default</code> maps to <code>.btn-outline-secondary</code>.</p>
+          <p>Use for all standard actions. <code>.btn-default</code> is complete on its own — do not add <code>.btn-outline-secondary</code> alongside it.</p>
         </div>
       </div>
     </li>
@@ -41,7 +41,7 @@ layout: base.njk
       <div class="row bg-dark rounded text-white g-3 align-items-center">
         <div class="col-12 col-sm-auto">
           <div class="p-2">
-            <button class="btn btn-outline-light btn-outline-white">.btn-outline-white</button>
+            <button class="btn btn-outline-white">.btn-outline-white</button>
           </div>
         </div>
         <div class="col-12 col-sm">
@@ -53,11 +53,11 @@ layout: base.njk
     <li class="py-3">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-sm-auto">
-          <button class="btn btn-outline-danger border-2 btn-danger-x"><i class="fa-solid fa-exclamation me-2" aria-hidden="true"></i>btn-danger-x</button>
+          <button class="btn btn-danger-x"><i class="fa-solid fa-exclamation me-2" aria-hidden="true"></i>btn-danger-x</button>
         </div>
         <div class="col-12 col-sm">
           <strong>Destructive action</strong>
-          <p>Use <code>btn-danger-x</code> (<code>.btn-outline-danger.border-2</code>) and pair it with <code>.fa-solid.fa-exclamation.me-1</code>. Do not use filled <code>.btn-danger</code>.</p>
+          <p>Use <code>.btn-danger-x</code>, which carries its own 2px border, and pair it with <code>.fa-solid.fa-exclamation.me-2</code>. Do not use filled <code>.btn-danger</code>.</p>
         </div>
       </div>
     </li>
@@ -75,7 +75,7 @@ layout: base.njk
     <li class="py-3">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-sm-auto">
-          <button class="btn btn-outline-secondary btn-default">.btn-default</button>
+          <button class="btn btn-default">.btn-default</button>
         </div>
         <div class="col-12 col-sm">
           <p>All standard UI contexts — forms, modals, cards, toolbars.</p>
@@ -85,7 +85,7 @@ layout: base.njk
     <li class="py-3">
       <div class="row g-3 align-items-center">
         <div class="col-12 col-sm-auto">
-          <button class="btn btn-outline-secondary btn-default btn-sm">.btn-default.btn-sm</button>
+          <button class="btn btn-default btn-sm">.btn-default.btn-sm</button>
         </div>
         <div class="col-12 col-sm">
           <p>Dense UI where space is constrained — tables, inline actions, tight toolbars. Not for emphasis.</p>
@@ -135,7 +135,7 @@ layout: base.njk
           <button class="btn btn-link" disabled>.btn-link</button>
         </div>
         <div class="col-12 col-sm">
-          <p>Do not use <code>.btn-link</code>. If the action navigates, use an <code>&lt;a&gt;</code> element.</p>
+          <p>Avoid <code>.btn-link</code>. If the action navigates, use an <code>&lt;a&gt;</code> element.</p>
         </div>
       </div>
     </li>
@@ -424,6 +424,19 @@ layout: base.njk
     <i class="fa-solid fa-heart fa-2x me-3 text-info"></i>
     <i class="fa-solid fa-star fa-2x me-3 text-info"></i>
     <i class="fa-solid fa-book fa-2x text-info"></i>
+  </div>
+
+  <hr class="my-5 border-0">
+</section>
+
+<!-- Alerts Section -->
+<section id="section-alerts">
+  <h2>Alerts</h2>
+
+  <p>Bootstrap's alerts, with each variant keeping its Bootstrap meaning. A link inside an alert takes the alert's own colour automatically, so it stays legible on every variant; add <code>.alert-link</code> only if you also want it bold.</p>
+
+  <div class="alert alert-info">
+    The reading room closes early on Friday. <a href="#section-alerts">See the full schedule</a>.
   </div>
 
   <hr class="my-5 border-0">

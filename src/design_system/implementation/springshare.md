@@ -22,7 +22,7 @@ In LibGuides it goes in the **Look & Feel → Custom JS/CSS** panel, which alrea
 
 **The Bootstrap theme colours.** This sheet rewrites `--bs-primary`, `--bs-secondary` and the other theme slots to the brand palette, so the classes LibApps' own Bootstrap provides — `.text-primary`, `.bg-primary`, `.btn-primary` — pick up UChicago colours with no further work.
 
-**Buttons, breadcrumbs, the header and the footer**, which are compiled into both stylesheets, and **Bootstrap's helpers** such as `.ratio`, `.stretched-link` and `.vstack`.
+**Buttons, alerts, breadcrumbs, the header and the footer**, which are compiled into both stylesheets, and **Bootstrap's helpers** such as `.ratio`, `.stretched-link` and `.vstack`.
 
 ## What is not available
 

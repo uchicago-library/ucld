@@ -242,8 +242,20 @@ $body-bg: #ffffff;
 $body-color: $dark;
 
 // == Focus Ring ==
+//! Keyboard focus is a solid outline drawn by `base/_global.scss`, not
+//! Bootstrap's translucent glow: the glow measured about 2:1 on white, below
+//! the 3:1 a focus indicator needs, and forced-colors mode removes box-shadows
+//! outright. Setting `$focus-ring-color` also feeds every Bootstrap component
+//! focus token, so this section is the single place focus colour is decided.
 
-$focus-ring-color: rgba($ucl-lake-light, 0.80);
+/// Focus outline on light surfaces. The link colour, so focus and links read
+/// as one family. At least 4.5:1 on white and on both body surfaces.
+$focus-ring-color: $link-color;
+
+/// Focus outline on dark surfaces — `.global-navbar`, `.navbar-dark` and
+/// `.footer` — where the link colour falls to about 2:1. The lighter shade of
+/// the same family, at least 4.3:1 on each.
+$ucl-focus-ring-color-on-dark: $ucl-lake-light;
 
 // === Other Tokens ===
 
