@@ -93,9 +93,26 @@ button {
 // GLOBAL LAYOUT & COMPONENTS
 // =============================================================================
 
-// Override the increased container limit established by Springshare.
-.container {
+// Override the increased container limit established by Springshare back to BS5.
+// instead of changing each template `.container` >> `.containr-lg`
+/*.container {
     max-width: 1320px !important;
+}*/
+
+@media (min-width: 992px) {
+    .container{
+        max-width:960px !important;
+    }
+}
+@media (min-width: 1200px) {
+    .container{
+        max-width:1140px !important;
+    }
+}
+@media (min-width: 1400px) {
+    .container{
+        max-width:1320px !important;
+    }
 }
 
 // Override all dashed borders
@@ -153,7 +170,6 @@ h2.footer-heading {
     }
 
     .fa.fa-angle-double-up.fa-stack-1x {
-        color: $white;
         bottom: unset !important;
     }
 }
