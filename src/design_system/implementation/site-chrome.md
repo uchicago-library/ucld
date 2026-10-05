@@ -1,6 +1,6 @@
 ---
 title: "Site Chrome"
-description: "The header, footer and favicon that frame every Library page, and the markup to reuse them."
+description: "The header and footer that frame every Library page, and the markup to reuse them."
 layout: base.njk
 ---
 
@@ -53,12 +53,3 @@ A header without navigation: a maroon band with the white logo. It reuses `.glob
 
 `.footer` supplies the dark surface, white links and unstyled lists — Bootstrap has no footer component, so this one is ours. `.footer-heading` styles a column heading. `.centerdiv` is the centred block at the foot holding the logo and closing text; the block is current, only its name predates the naming convention.
 
-## Favicon
-
-The Library mark is an **ICO, not an SVG** — there is no SVG version published. Reference the canonical copy rather than vendoring it, so a change to the mark reaches every site at once.
-
-```html
-<link rel="icon" type="image/x-icon" href="https://www.lib.uchicago.edu/web-resources/img/favicon-black.ico">
-```
-
-Three variants exist at that path: `favicon.ico` full colour, `favicon-black.ico` monochrome for light browser chrome, and `favicon-m.ico` for mobile. Serve a copy at `/favicon.ico` as well — browsers request that path on their own, without reading the tag above.

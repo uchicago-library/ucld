@@ -6,9 +6,6 @@
 // unavailable here, and that list is this list. If you enable or disable an
 // import, update src/design_system/implementation/springshare.md to match.
 
-@import url("https://uchicago-brand-fonts.s3.us-east-2.amazonaws.com/UChicagoSansSerif.css");
-@import url("https://www.lib.uchicago.edu/web-resources/css/uchicagoSansSerif.css");
-
 // Include only Sass foundations needed for tokens and component partial compilation.
 
 // 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
@@ -68,6 +65,7 @@
 // 7. Add additional custom code here
 
 // Import base styles (after Bootstrap)
+@import "base/fonts";
 @import "base/global";
 // @import "base/typography";
 // @import "base/layout";

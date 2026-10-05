@@ -105,7 +105,7 @@ layout: base.njk
 
 Markdown and HTML render identically through this layout. Use `.md` for prose; use `.html` when the rendered markup *is* the documentation — live demos, type specimens, or anything needing a `<style>` or `<script>` block.
 
-A few pages still hand-roll the include chain instead of using the layout, because their demos need to escape the constrained prose column. `implementation/layouts.html` and `token-tables.html` are the examples.
+A few pages still hand-roll the include chain instead of using the layout, because their demos need to escape the constrained prose column. `implementation/token-tables.html` is the example.
 
 ### Two headers
 
@@ -124,7 +124,8 @@ None of this needs a manual step. Adding a page is enough.
 
 - **Navigation.** Section landing pages and the homepage's documentation navigation are built from the folder structure. Placing a page inside a section folder is all that is required. Only a brand-new *top-level* section needs its path added to the whitelist in `src/index.html`.
 - **Token Tables** and `/design_system/tokens.json`, from the SCSS sources.
-- **`/llms.txt`**, a discovery index for agents building other projects against this design system.
+- **Bootstrap's JavaScript** at `/styles/bootstrap.bundle.min.js`, beside `main.css`, copied from the same installed package the CSS is compiled from. The two cannot drift to different Bootstrap versions.
+- **`/llms.txt`**, a discovery index for agents building other projects against this design system. It lists the Design System's subsections and their pages, and the Pages groups, all derived from the folders. A page that is not guidance — a type specimen, say — sets `llms: false` in its front matter to stay out.
 - **A Markdown copy of every `design_system/` page**, served at `/design_system/<page>.md`. Prose pages are copied verbatim; reference pages get a generated twin carrying each section's real markup, built from the rendered output so it cannot drift.
 
 Because the Markdown copies and `/llms.txt` publish the `description` front matter, every page needs a real one-line summary rather than a placeholder.

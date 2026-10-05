@@ -58,7 +58,7 @@ Pushing to `main` triggers [`.github/workflows/deploy-pages.yml`](.github/workfl
 
 ## Dependencies
 
-All are development dependencies; nothing here ships to the browser. Components need only Bootstrap and Font Awesome at runtime, both loaded from a CDN.
+All are development dependencies; nothing here ships to the browser. Components need only Bootstrap and Font Awesome at runtime. Bootstrap's CSS is compiled into `main.css` and its JavaScript is published beside it, so the two always match; Font Awesome loads from a CDN.
 
 | Dependency | Purpose |
 | --- | --- |

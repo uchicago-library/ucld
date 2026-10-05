@@ -4,8 +4,13 @@ eleventyExcludeFromCollections: true
 ---
 {#
   Discovery index for AI agents, following the llms.txt convention
-  (https://llmstxt.org). Generated from the design system collections, so new
-  pages appear automatically.
+  (https://llmstxt.org). An index, not a copy: it points at the sections and
+  their pages, and holds no guidance of its own.
+
+  Generated entirely from the folder structure. The Design System subsections
+  are its child index pages, and each page sits under the subsection whose
+  folder holds it, so a new page or a new subsection appears without editing
+  this file. A page sets `llms: false` in its front matter to stay out.
 
   Audience: agents building OTHER projects against this design system. Agents
   working ON the design system have the repo, so methodology/ and mockups are
@@ -15,33 +20,47 @@ eleventyExcludeFromCollections: true
   apostrophes and ampersands into HTML entities; `ascii` keeps the file free of
   characters that mojibake when Pages serves text/plain without a charset.
 -#}
+{%- set dsUrl = '/design_system/' %}
+{%- set pagesUrl = '/pages/' -%}
 # {{ site.name | ascii | safe }}
 
 > {{ site.summary | ascii | safe }}
 
-Built with Bootstrap 5 and FontAwesome 6. Every page below is available as
-Markdown -- fetch these `.md` URLs rather than the rendered HTML pages, which
-are roughly 90% navigation chrome.
+Built with Bootstrap 5 and Font Awesome 6. Section headings link to their
+rendered landing pages. Every page listed under them is available as Markdown --
+fetch those `.md` URLs rather than the rendered HTML, which is mostly
+navigation chrome.
 
-Guidance pages are prose. Reference pages are generated from the live
-documentation pages and carry each component's real markup in fenced `html`
-blocks, so they cannot drift from what the site renders. Each names its
-rendered counterpart in a `source:` front matter field.
+Reference pages carry each component's real markup in fenced `html` blocks,
+generated from the live page so they cannot drift. When copying from one, take
+the component element itself and drop the surrounding `.row` / `.col-*`
+wrappers, which only lay the demo out beside its description.
 
-When copying from a reference page, take the component element itself and drop
-the surrounding `.row` / `.col-*` wrappers -- those lay the demo out beside its
-description and are not part of the component.
+Prefer Bootstrap's own classes and the documented component classes over
+bespoke CSS. To load the design system in a project, start with
+{{ site.origin }}{{ '/design_system/using-ucld.md' | url }}
 
-Colours, spacing, and type are Bootstrap 5 variables overridden with UChicago
-brand tokens. Prefer Bootstrap's own classes and the documented component
-classes over bespoke CSS.
+## [Design System]({{ site.origin }}{{ dsUrl | url }})
+{%- for section in collections.all | sort(false, false, 'data.title') %}
+{%- if dsUrl in section.url and section | isIndexPage and section.url | urlDepth == 2 %}
 
-## Guidance
-{% for doc in collections.designSystem %}{% if ".md" in doc.inputPath %}
-- [{{ doc.data.title | ascii | safe }}]({{ site.origin }}{{ ("/design_system/" + doc.fileSlug + ".md") | url }}): {{ doc.data.description | ascii | safe }}
-{%- endif %}{% endfor %}
+### [{{ section.data.title | ascii | safe }}]({{ site.origin }}{{ section.url | url }})
+{% for doc in collections.designSystem %}
+{%- if section.url in doc.url and doc.data.llms !== false %}
+- [{{ doc.data.title | ascii | safe }}]({{ site.origin }}{{ (dsUrl + doc.fileSlug + ".md") | url }}): {{ doc.data.description | ascii | safe }}
+{%- endif %}
+{%- endfor %}
+{%- endif %}
+{%- endfor %}
 
-## Reference (component markup)
-{% for doc in collections.designSystemReference %}
-- [{{ doc.data.title | ascii | safe }}]({{ site.origin }}{{ ("/design_system/" + doc.fileSlug + ".md") | url }}): {{ doc.data.description | ascii | safe }}
+Every token and documented class is also published as JSON at
+{{ site.origin }}{{ '/design_system/tokens.json' | url }}
+
+## [Pages]({{ site.origin }}{{ pagesUrl | url }})
+
+Complete pages rendered with the system, for seeing it in place.
+{% for group in collections.all | sort(false, false, 'data.title') %}
+{%- if pagesUrl in group.url and group | isIndexPage and group.url != pagesUrl %}
+- [{{ group.data.title | ascii | safe }}]({{ site.origin }}{{ group.url | url }})
+{%- endif %}
 {%- endfor %}

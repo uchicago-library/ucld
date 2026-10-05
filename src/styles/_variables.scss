@@ -261,6 +261,8 @@ $ucl-focus-ring-color-on-dark: $ucl-lake-light;
 
 // == Typography ==
 
+/// The brand typeface, declared with its real weights in `base/_fonts.scss`
+/// and compiled into `main.css`, so no font stylesheet needs loading.
 $font-family-sans-serif: "UChicago Sans Serif", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
 // == Breadcrumb Overrides ==

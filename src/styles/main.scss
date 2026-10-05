@@ -64,6 +64,7 @@
 @import "../../node_modules/bootstrap/scss/utilities/api";
 
 // 6. Base styles (after Bootstrap)
+@import "base/fonts";
 @import "base/global";
 @import "base/typography";
 @import "base/layout";

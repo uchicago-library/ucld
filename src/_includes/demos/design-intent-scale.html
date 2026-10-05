@@ -1,0 +1,19 @@
+{#
+  One Design Intent axis: the team's current lean, shown on a 1–10 scale and
+  stated in words, from a single value. Set `axis` before including:
+
+    {% set axis = { left: "Rich", right: "Streamlined", value: 9 } %}
+
+  Styled by src/styles/meta/_design-intent.scss. This partial must contain no
+  blank lines: it is included into Markdown, and a blank line would end the
+  HTML block and hand the rest to the Markdown parser.
+#}
+<div class="intent-scale">
+<div class="d-flex flex-wrap flex-sm-nowrap align-items-center gap-2 gap-sm-3">
+<span class="fw-semibold text-nowrap intent-scale__label">{{ axis.left }}</span>
+<span class="fw-semibold text-nowrap intent-scale__label ms-auto ms-sm-0 order-1 order-sm-2">{{ axis.right }}</span>
+<input type="range" class="form-range flex-sm-grow-1 mb-0 w-100 order-2 order-sm-1" min="1" max="10" step="1" value="{{ axis.value }}" list="intent-ticks-{{ axis.left | lower }}" aria-label="{{ axis.left }} to {{ axis.right }}">
+</div>
+<datalist id="intent-ticks-{{ axis.left | lower }}"><option value="1"></option><option value="2"></option><option value="3"></option><option value="4"></option><option value="5"></option><option value="6"></option><option value="7"></option><option value="8"></option><option value="9"></option><option value="10"></option></datalist>
+<p><strong>Current lean: {{ axis.value }}</strong>, on a scale from 1 ({{ axis.left }}) to 10 ({{ axis.right }}).</p>
+</div>

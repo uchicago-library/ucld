@@ -68,7 +68,7 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 
 ### Design tokens
 
-`src/design_system/token-tables.html` is generated at build time by `src/_data/tokens.js` from the SCSS itself. Values, CSS variable names, utility classes and notes are never transcribed by hand.
+`src/design_system/implementation/token-tables.html` is generated at build time by `src/_data/tokens.js` from the SCSS itself. Values, CSS variable names, utility classes and notes are never transcribed by hand.
 
 - Annotation prose renders as **inline** Markdown only. Backticks and links work; lists and headings do not. Wrap a class name containing an asterisk in backticks, or a bare `.btn-*` pairs its asterisks into emphasis.
 - **Do not add `!default` to a `$ucl-*` token, and do not reassign one downstream.** Either makes the published `--ucl-*` custom property silently disagree with the compiled Sass. See the Auto-Exposure Constraint note in `_variables.scss`.

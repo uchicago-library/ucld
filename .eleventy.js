@@ -31,6 +31,16 @@ module.exports = function (eleventyConfig) {
     "src/assets/images/favicon-black.ico": "favicon.ico",
   });
 
+  // Publish Bootstrap's JavaScript beside main.css, from the same installed
+  // package the CSS is compiled from. A project loading both from here can
+  // never end up with JS and CSS from different Bootstrap versions, and a
+  // Bootstrap upgrade here moves both at once. The source map travels with it
+  // because the minified file references it.
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js": "styles/bootstrap.bundle.min.js",
+    "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js.map": "styles/bootstrap.bundle.min.js.map",
+  });
+
   // src/assets/README.md documents the asset folder for contributors. Without
   // this it is treated as a template and published as a site page, since .md
   // is a templateFormat. Passthrough copy still ships the raw file.
@@ -106,7 +116,8 @@ module.exports = function (eleventyConfig) {
   );
 
   // Split a rendered reference page into its top-level <section> blocks.
-  // Depth-aware rather than regex-split, because layouts.html nests <section>.
+  // Depth-aware rather than regex-split, so a <section> nested inside a demo
+  // cannot split a reference page in the wrong place.
   // The annotations <template> is dropped: it is documentation-overlay data,
   // not component markup.
   eleventyConfig.addFilter("referenceSections", (content) => {

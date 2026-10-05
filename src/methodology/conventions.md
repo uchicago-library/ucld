@@ -50,11 +50,17 @@ Use IDs for things that are unique on the page; use classes for anything that re
 
 Markdown pages are processed by Nunjucks before Markdown, so any literal template syntax you want to display has to be wrapped in a raw block. Internal links go through the `url` filter so the path prefix is applied. Use fenced code blocks; indented ones are disabled.
 
-## Writing SCSS
+## Writing CSS
+
+These apply to any project styling on top of the design system, not only to this one. [Using the Design System in a Project]({{ '/design_system/implementation/using-ucld/' | url }}) links here, along with the BEM and IDs sections above.
 
 - **Never hardcode a value** that exists as a token.
 - **Prefer the highest-level class available** — a Bootstrap component class over utilities, utilities over bespoke CSS.
 - **Avoid `!important`.**
+- **Honour `prefers-reduced-motion`.** Animate nothing that the user has asked to keep still.
+
+## Writing SCSS in This Project
+
 - **One file per component**, at `src/styles/components/_name.scss`, imported in `main.scss`.
 - **Documentation-only styles** go in `src/styles/meta/` and are imported in `meta.scss`, never in `main.scss`.
 - **Rules in `meta/_documentation.scss` use direct-child selectors** (`.documentation > h2`). Markdown output is flat, so this reaches everything Markdown emits while leaving nested demo markup alone.
@@ -92,5 +98,6 @@ What the build cannot decide still needs you:
 - **The layout holds at each breakpoint.** These are Bootstrap's defaults, unmodified: 576, 768, 992, 1200 and 1400 pixels.
 - **It reads correctly.** A control's accessible name should make sense read aloud on its own, without the surrounding page.
 - **No console errors**, in current Chrome, Firefox and Safari.
+- **Nothing a consumer may use is removed or renamed** — no class, token or custom property. Projects load the published stylesheet directly, with no version to pin, so a removal reaches them on the next deploy.
 
 Pages under `src/pages/libapps/` reproduce Springshare's own markup so the LibApps stylesheet can be tested against it. The accessibility check reports findings there as warnings, and they should not be resolved by editing the reproduction.

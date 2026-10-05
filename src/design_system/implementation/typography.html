@@ -13,12 +13,8 @@ layout: base.njk
 <!-- Font Information -->
 <section class="mb-5">
   <h2 class="alert-heading">UChicago Sans Serif</h2>
-  <p class="mb-2">This site uses <strong>UChicago Sans Serif</strong> as the primary typeface, loaded from:</p>
-  <ul class="mb-2">
-    <li><strong>Source maintained by UChicago Creative:</strong> <code>https://uchicago-brand-fonts.s3.us-east-2.amazonaws.com/UChicagoSansSerif.css</code></li>
-    <li><strong>Fallback maintained by UChicago Library:</strong> <code>https://www.lib.uchicago.edu/web-resources/css/uchicagoSansSerif.css</code></li>
-  </ul>
-  <p class="mb-0"><small>Font should fallback to system defaults. System fallbacks include: <code>-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif</code></small></p>
+  <p><strong>UChicago Sans Serif</strong> is the primary typeface. <code>main.css</code> declares it with its four weights — Light 300, Regular 400, SemiBold 600 and Bold 700, each with an italic — so no font stylesheet needs loading alongside it. The font files are served by UChicago Creative.</p>
+  <p>The full stack, including its system fallbacks, is <code>$font-family-sans-serif</code> in the <a href="{{ '/design_system/implementation/token-tables/' | url }}">Token Tables</a>.</p>
 </section>
 
 <hr class="my-5">
