@@ -7,6 +7,10 @@ header[role="banner"] {
     position: relative;
 }
 
+// Trying a workaround.
+// font-weight 400 is too thin and the 500 too heavy
+header a{ -webkit-text-stroke: 0.15px currentColor !important; }
+
 /// Top bar holding the site logo, shortcut links and the mobile nav toggle.
 /// Sits above the global navbar and is separated from it by a bottom border.
 .logo-bar {
