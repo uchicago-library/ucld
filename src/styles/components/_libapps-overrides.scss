@@ -1,5 +1,4 @@
-// LibApps platform-specific overrides shared across mockups.
-
+// LibApps platform-specific overrides.
 
 // =============================================================================
 // GLOBAL TOKEN OVERRIDES
@@ -476,6 +475,11 @@ h1 {
 /* separate home page tabs from title and description */
 #s-lg-tabs-container{
     margin-top: 1rem !important;
+}
+
+// hide author byline on automatic guides lists
+.s-lg-guide-list-info {
+    display:none;
 }
 
 
