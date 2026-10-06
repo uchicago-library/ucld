@@ -27,8 +27,7 @@ Consult those before adding a file to an unfamiliar directory, adding a componen
 Most documentation here regenerates itself. The parts that do not are listed below, and they are the parts that go stale.
 
 - **Adding a token or a component class** — annotate it in the SCSS with `///` (a note for the declaration below) or `//!` (guidance for the section). The Token Tables page and `/design_system/tokens.json` pick it up. Nothing else to update.
-- **Adding a page** — navigation, section listings and `/llms.txt` are all generated from the folder structure. Write a real `description` in the front matter, because it is published. Do not hand-edit navigation.
-- **Adding a new *top-level* section** — this is the one manual step: add its path to the `whitelist` in `src/index.html`.
+- **Adding a page or a section** — navigation, every section index, the homepage's site index and `/llms.txt` are all generated from the folder structure, at any depth. Write a real `description` in the front matter, because it is published and shown on the index pages. Do not hand-edit navigation.
 - **Changing structure, the build, or what it enforces** — update `src/methodology/architecture.md`.
 - **Changing a rule contributors follow** — update `src/methodology/conventions.md`.
 - **Finding a trap that fails silently** — add it to this file.
@@ -51,7 +50,7 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 ### Markdown pages
 
 - Nunjucks runs **before** Markdown. Wrap any template syntax you want to *display* in `{% raw %}`.
-- Internal links must go through the `url` filter, or they break under the path prefix: `[Tokens]({{ '/design_system/implementation/design-tokens/' | url }})`.
+- Internal links must go through the `url` filter, or they break under the path prefix: `[Token Tables]({{ '/design_system/implementation/token-tables/' | url }})`.
 - Indented (4-space) code blocks are disabled. Use fenced blocks.
 - Leave a blank line before a `---` horizontal rule, or it turns the line above into an `<h2>`.
 - **Do not put block-level HTML in a `.md` file.** Markdown output is flat and `meta/_documentation.scss` depends on that. If a Markdown page needs a live demo, move the markup to a partial and pull it in with one `{% include %}`. Inline HTML inside a table cell is fine.

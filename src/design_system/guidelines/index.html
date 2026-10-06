@@ -1,18 +1,8 @@
 ---
 title: "Guidelines"
+description: "General guidelines for components and patterns rather than specific rules."
+layout: base.njk
 ---
 
-{% include "meta/document-start.html" %}
-{% include "meta/docs-header.html" %}
-
-{% include "breadcrumb.html" %}
-
-<main id="main-content" tabindex="-1" class="container-md py-4 mb-5">
-  <div class="col-lg-10 mx-auto">
-    <h1>Guidelines</h1>
-    <p>General guidelines for components and patterns rather than specific rules.</p>
-    {% include "child-pages-list.html" %}
-  </div>
-</main>
-
-{% include "footer.html" %}
+{% set showDescriptions = true %}
+{% include "child-pages-list.html" %}

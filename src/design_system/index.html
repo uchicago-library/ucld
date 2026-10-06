@@ -1,146 +1,31 @@
 ---
 title: "Design System"
-description: "The layers of our design system, where one informs the next."
+description: "The layers of our design system, where one informs the next: the foundation behind our decisions, the guidelines for applying them, and their implementation."
 layout: base.njk
 ---
 
 <section class="mb-5">
-  <h2>Foundation</h2>
-  <p>What guides our design decisions.</p>
-
-  <h3>Priorities</h3>
+  <h2>Priorities</h2>
   <ul>
     <li>Our most important users are from our academia, but the website needs to be usable by non-experts, new students, potential donors, and community members (neighborhood residents, high school teachers and students, etc).</li>
     <li>We would like to provide customization where possible.</li>
     <li>Ensure that Library sites are accessible and follow practices of universal design.</li>
   </ul>
-
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/foundation/design-intent/' | url }}">Design Intent</a></h3>
-          <p class="card-text">Value-pair scales that guide design decisions, useful for discussion and alignment.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/foundation/observations/' | url }}">Observations</a></h3>
-          <p class="card-text">User research findings organized by theme that directly inform our design priorities.</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="mb-5">
-  <h2>Guidelines</h2>
-  <p>General guidelines instead of specific rules for components and patterns.</p>
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/guidelines/grouping-content/' | url }}">Grouping Content</a></h3>
-          <p class="card-text">Rules for using backgrounds, borders, and shadows to group related content without visual over-nesting.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/guidelines/color-usage-guidelines/' | url }}">Color Usage Guidelines</a></h3>
-          <p class="card-text">Short guidance for applying color at page and component levels using the 60-30-10 rule.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/guidelines/copywriting/' | url }}">Copywriting Guidelines</a></h3>
-          <p class="card-text">Standards for voice, naming, and editorial style across all library interfaces and content.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>Reviewing Design Decisions</h2>
+  <ul>
+    <li><a href="{{ '/design_system/implementation/token-tables/' | url }}#panel-brand-colors">Brand palette</a> — every brand color family, with its values, generated from the stylesheet.</li>
+    <li><a href="{{ '/design_system/guidelines/color-usage-guidelines/' | url }}">Color Usage Guidelines</a> — how much of each color to use, and for what.</li>
+    <li><a href="{{ '/design_system/foundation/design-standards/' | url }}">Design Standards</a> — the usability and accessibility requirements every component is held to.</li>
+    <li><a href="{{ '/design_system/foundation/design-intent/' | url }}">Design Intent</a> — where the system currently leans between competing values.</li>
+  </ul>
+  <p>Building with the system rather than reviewing it? Start from <a href="{{ '/design_system/implementation/' | url }}">Implementation</a>.</p>
 </section>
 
 <section class="mb-5">
-  <h2>Implementation</h2>
-  <p>Cheat sheet for implementation rather than rulesets.</p>
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/using-ucld/' | url }}">Using the Design System in a Project</a></h3>
-          <p class="card-text">How to load the design system in another project, and where the rules for styling on top of it live.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/design-tokens/' | url }}">Tokens</a></h3>
-          <p class="card-text">SCSS and CSS variables including typography, spacing, borders, shadows, and transitions. See also the <a href="{{ '/design_system/implementation/design-tokens-colors/' | url }}">complete color palette</a>.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/token-tables/' | url }}">Token Tables</a></h3>
-          <p class="card-text">Generated reference for every token, with its CSS variable, SCSS variable, utility classes and value. Read from the stylesheet at build time, so it cannot go stale.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/components/' | url }}">Components</a></h3>
-          <p class="card-text">Reusable UI components and patterns for the design system.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title">Templates</h3>
-          <p class="card-text"><a href="{{ '/design_system/implementation/layouts/' | url }}">Page Layouts</a> and common page layout patterns for structuring content.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/typography/' | url }}">Typography</a></h3>
-          <p class="card-text">Font families, sizes, weights, and line heights used throughout the design system. Includes <a href="{{ '/design_system/implementation/typography-history/' | url }}">a narrative example</a>.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/event-tracking/' | url }}">Event Tracking</a></h3>
-          <p class="card-text">Custom event labeling schema for GA4 analytics using <code>data-ga-*</code> attributes on interactive elements.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/springshare/' | url }}">Styling Springshare Pages</a></h3>
-          <p class="card-text">Applying the system to LibGuides and other Springshare pages, which load their own Bootstrap at runtime.</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card h-100">
-        <div class="card-body">
-          <h3 class="card-title"><a href="{{ '/design_system/implementation/site-chrome/' | url }}">Site Chrome</a></h3>
-          <p class="card-text">The header and footer that frame every Library page, and the markup to reuse them.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <h2>All Design System Pages</h2>
+  {% set showDescriptions = true %}
+  {% include "child-pages-list.html" %}
 </section>

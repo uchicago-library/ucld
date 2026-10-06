@@ -73,6 +73,30 @@
         target.click();
       }
     }
+
+    // A link into the page (#panel-brand-colors, or a section heading) opens
+    // the tab holding its target. The browser cannot scroll to an element
+    // inside a hidden panel, so without this the link would silently land on
+    // whichever tab happened to be open.
+    if (window.location.hash) {
+      var anchor = document.getElementById(decodeURIComponent(window.location.hash.slice(1)));
+      var anchorPanel = anchor && anchor.closest(".tab-pane");
+      var opener = anchorPanel && tabFor(anchorPanel);
+      if (opener && opener.classList.contains("active")) {
+        anchor.scrollIntoView();
+      } else if (opener) {
+        // Scroll once the fade has finished. Until then the outgoing panel
+        // still takes up space, and the target moves up when it collapses.
+        opener.addEventListener("shown.bs.tab", function () {
+          anchor.scrollIntoView();
+        }, { once: true });
+        opener.click();
+      }
+    }
+  }
+
+  function tabFor(panel) {
+    return document.querySelector('[data-bs-target="#' + panel.id + '"]');
   }
 
   var input = document.querySelector("[data-token-search]");
@@ -127,4 +151,23 @@
   }
 
   input.addEventListener("input", filter);
+
+  // Arriving from the header search, ?q= fills the box and filters on load.
+  // If the open tab holds no match, move to the first one that does, so the
+  // reader lands on results rather than on an empty panel.
+  var initialQuery = new URLSearchParams(window.location.search).get("q");
+  if (initialQuery) {
+    input.value = initialQuery;
+    filter();
+
+    var hasHits = function (panel) {
+      return Boolean(panel.querySelector(".token-table__row:not(." + FILTERED_CLASS + ")"));
+    };
+    var openPanel = document.querySelector(".tab-pane.active");
+    if (openPanel && !hasHits(openPanel)) {
+      var firstWithHits = Array.prototype.find.call(document.querySelectorAll(".tab-pane"), hasHits);
+      var firstTab = firstWithHits && tabFor(firstWithHits);
+      if (firstTab) firstTab.click();
+    }
+  }
 })();

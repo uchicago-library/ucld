@@ -8,55 +8,41 @@ title: "UChicago Library Design System"
 <main id="main-content" tabindex="-1" class="container-md py-5 mb-5">
   <div class="row">
     <div class="col-lg-10 mx-auto">
-      
+
       <h1 class="display-4 mb-4">UChicago Library Design System</h1>
-      
-      <p class="lead">A comprehensive design system for the University of Chicago Library, providing reusable components, design tokens, and development guidelines built on Bootstrap 5.</p>
+
+      <p class="lead">Design tokens, components and guidelines for University of Chicago Library websites. Built on Bootstrap 5 with the Library's brand colours and typeface, and held to WCAG 2.1 Level AA.</p>
 
       <hr class="my-5">
 
       <section class="mb-5">
-        <h2>Quicklinks</h2>
-        <ul>
-          <li><a href="{{ '/design_mockups/guides/guides-homepage/' | url }}">Guides Homepage</a> - LibGuides homepage pattern with tabbed and categorized guide discovery.</li>
-          <li><a href="{{ '/pages/libapps/database-finder/' | url }}">Database Finder</a> - LibApps database listing and filtering page for styling validation.</li>
-          <li><a href="{{ '/design_mockups/guides/guides-default-side-nav/' | url }}">Guides Default Side Nav</a></li>
-          <li><a href="{{ '/design_mockups/guides/guides-guide-wide-column/' | url }}">Guides Guide Wide Column</a> - LibApps guide page with a wide column layout for styling validation.</li>
-        </ul>
-      </section>
-
-      <section class="mb-5">
-        <h2>The System</h2>
+        <h2>Where to Start</h2>
         <div class="row g-4">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="card h-100">
               <div class="card-body">
-                <h3 class="card-title"><a href="{{ '/design_system/' | url }}">Design System</a></h3>
-                <p class="card-text">Design principles, color palette, accessibility standards, and design tokens.</p>
+                <h3 class="card-title"><a href="{{ '/design_system/implementation/' | url }}">Build with It</a></h3>
+                <ul class="mb-0">
+                  <li><a href="{{ '/design_system/implementation/token-tables/' | url }}">Token Tables</a></li>
+                  <li><a href="{{ '/design_system/implementation/components/' | url }}">Components</a></li>
+                  <li><a href="{{ '/design_system/implementation/using-ucld/' | url }}">Using it in a project</a></li>
+                </ul>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="card h-100">
               <div class="card-body">
-                <h3 class="card-title"><a href="{{ '/design_mockups/' | url }}">Mockups</a></h3>
-                <p class="card-text">Exploratory and validation page mockups used to test layout directions and interactions.</p>
+                <h3 class="card-title"><a href="{{ '/design_system/' | url }}">Review Its Decisions</a></h3>
+                <p class="card-text">For designers and project owners. The palette, the guidelines, and the standards and research behind them.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="card h-100">
               <div class="card-body">
-                <h3 class="card-title"><a href="{{ '/pages/' | url }}">Pages</a></h3>
-                <p class="card-text">Application-exported pages organized for implementation and visual validation.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title"><a href="{{ '/methodology/' | url }}">Project Methodology</a></h3>
-                <p class="card-text">Best practices, setup, naming conventions, and how to add components and pages.</p>
+                <h3 class="card-title"><a href="{{ '/methodology/' | url }}">Contribute to It</a></h3>
+                <p class="card-text">For people changing the system. Setup, architecture and conventions, alongside the <a href="https://github.com/uchicago-library/ucld" target="_blank">repository</a>.</p>
               </div>
             </div>
           </div>
@@ -64,136 +50,36 @@ title: "UChicago Library Design System"
       </section>
 
       <section class="mb-5">
-        <h2>Status & Roadmap</h2>
-        <p>Thie System is based on a planning document hosted <a href="https://uchicago.app.box.com/file/2095747484682?s=jf05ybrn63rgky5f66j8uhms6ljr26ez">here</a>.</p>
+        <h2>Status and Adoption</h2>
         <div class="alert alert-info">
-          <strong>🚀 In Progress:</strong> This design system is a work in progress stabilization effort aimed for completion by <strong>August 2026</strong>.
+          <strong>In progress:</strong> this design system is a stabilization effort aimed for completion by <strong>November 2026</strong>. It is based on a <a href="https://uchicago.app.box.com/file/2095747484682?s=jf05ybrn63rgky5f66j8uhms6ljr26ez">planning document on Box</a>.
         </div>
+
+        <h3>Systems using it</h3>
+        <ul>
+          <li><strong><a href="https://guides.lib.uchicago.edu/LibGuides" target="_blank">LibGuides</a></strong> — Integrated. Uses <a href="{{ '/design_system/implementation/springshare/' | url }}">Springshare stylesheet</a>.</li>
+          <li><strong><a href="https://github.com/uchicago-library/daypass#design-system" target="_blank">Day Pass</a></strong> — Integrated. Could benefit from a leaner output.css.</li>
+          <li><a href="https://www.lib.uchicago.edu/" target="_blank">Main Website</a></li>
+          <li><a href="https://catalog.lib.uchicago.edu/vufind/search" target="_blank">Catalog</a></li>
+          <li><a href="https://rooms.lib.uchicago.edu/r/search/seats#s-lc-public-pt" target="_blank">Book a Room</a></li>
+          <li><a href="https://repository.lib.uchicago.edu" target="_blank">Digital Repository</a></li>
+          <li><a href="https://knowledge.uchicago.edu/"  target="_blank">Knowledge@UChicago</a> - institutional repository.</li>
+          <li>Other library websites and services</li>
+        </ul>
+
+        <h3>Roadmap</h3>
         <ul class="mb-0">
-          <li>Review developer user cases.</li>
+          <li>Migrate the source SCSS code to the <a href="https://github.com/uchicago-library/library_website" target="_blank">main library website repo</a>.</li>
           <li>Finalize the initial set of components and design tokens based on the most common patterns across the library's websites.</li>
-          <li><s>Add mockups of HTML from LibApps to test styling.</s> ✓ LibApps/LibGuides/Springshare CSS output created.</li>
-          <li>Define two tab patterns: one for complex content without a bounding box (as used in Revised Guides), and one standard pattern where the active tab and content share a single content box.</li>
+          <li>Test it by implementing it in the main Library website.</li>
           <li>Add a utility to easily copy any &lt;pre&gt; or &lt;code&gt; content.</li>
         </ul>
       </section>
 
       <section class="mb-5">
-        <h2>Quick Facts</h2>
-        <div class="row g-4">
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Based on Brand Guidelines</h3>
-                <p class="card-text">Uses the official University of Chicago Library brand colors and typography (UChicago Sans Serif).</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">WCAG 2.1 Level AA</h3>
-                <p class="card-text">All components meet accessibility standards for contrast, keyboard navigation, and screen readers.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Built on Bootstrap 5</h3>
-                <p class="card-text">Leverages Bootstrap's powerful foundation with custom brand overrides and extensions.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6">
-            <div class="card h-100">
-              <div class="card-body">
-                <h3 class="card-title">Copy-Paste Ready</h3>
-                <p class="card-text">All components can be directly copied into other projects with minimal dependencies.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="mb-5">
-        <h2>Use Cases</h2>
-        <p>This design system is designed to support the main Library website. Other websites will also be supported with multi-platform modularity planned to be considered in the future.</p>
-        <ul>
-          <li><strong>Catalog</strong> (component library)</li>
-          <li><strong>LibGuides</strong> (custom CSS)</li>
-          <li><strong>Book a Room</strong> (embedded components)</li>
-          <li><strong>Other library websites and services</strong></li>
-          <li><strong><a href="https://repository.lib.uchicago.edu" target="_blank">Digital Repository</a></strong></li>
-        </ul>
-      </section>
-
-      <section class="mb-5">
-        <h2>Technology Stack</h2>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>Technology</th>
-              <th>Purpose</th>
-              <th>Version</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Eleventy</strong></td>
-              <td>Static site generator</td>
-              <td>2.0.1+</td>
-            </tr>
-            <tr>
-              <td><strong>Bootstrap 5</strong></td>
-              <td>CSS framework (SCSS)</td>
-              <td>5.3.2+</td>
-            </tr>
-            <tr>
-              <td><strong>Sass</strong></td>
-              <td>SCSS compilation</td>
-              <td>1.69.5+</td>
-            </tr>
-            <tr>
-              <td><strong>FontAwesome</strong></td>
-              <td>Icon library (CDN)</td>
-              <td>6.5.2</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <section class="mb-5">
-        <h2>Documentation Navigation</h2>
-        {%- set whitelist = [
-          '/design_system/',
-          '/design_mockups/',
-          '/pages/',
-          '/methodology/'
-        ] %}
-        <ul>
-        {%- for topSection in collections.all | sort(false, false, 'data.title') %}
-          {%- if topSection.url in whitelist %}
-          {%- set topDepth = topSection.url | urlDepth %}
-          <li>
-            <a href="{{ topSection.url | url }}">{{ topSection.data.title }}</a>
-            <ul>
-            {%- for section in collections.all | sort(false, false, 'data.title') %}
-              {%- if topSection.url in section.url and section | isIndexPage and section.url != topSection.url %}
-              <li>
-                <a href="{{ section.url | url }}">{{ section.data.title }}</a>
-                {%- set parentUrl = section.url %}
-                {% include "child-pages-list.html" %}
-              </li>
-              {%- elif topSection.url in section.url and not (section | isIndexPage) and section.url | urlDepth == topDepth + 1 %}
-              <li><a href="{{ section.url | url }}">{{ section.data.title }}</a></li>
-              {%- endif %}
-            {%- endfor %}
-            </ul>
-          </li>
-          {%- endif %}
-        {%- endfor %}
-        </ul>
+        <h2>Site Index</h2>
+        {% set parentUrl = '/' %}
+        {% include "child-pages-list.html" %}
       </section>
 
     </div>

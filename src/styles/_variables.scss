@@ -130,6 +130,10 @@ $enable-dark-mode: false;
 //! The core UChicago palette. Brand tokens are the raw material of the system:
 //! prefer the semantic tokens further down when styling components, and reach
 //! for these only when defining a new semantic role.
+//!
+//! Values follow the [UChicago Brand Guidelines](https://creative.uchicago.edu/brand-resources/),
+//! except Greystone: tinted to cooler greys for colour balance, with shades
+//! added to give a full neutral range for text, backgrounds and borders.
 
 $ucl-maroon: #800000;
 $ucl-greystone-lighter: #f9fafc;
@@ -140,6 +144,7 @@ $ucl-greystone-darker: #474f5b;
 $ucl-greystone-darkest: #2f3640;
 
 // == Secondary Brand Colors - Goldenrod Family ==
+//! Warnings, highlights and attention-grabbing elements.
 
 $ucl-goldenrod-light: #f3d03e;
 $ucl-goldenrod: #eaaa00;
@@ -152,6 +157,7 @@ $ucl-terracotta: #de7c00;
 $ucl-terracotta-dark: #a9431e;
 
 // == Secondary Brand Colors - Ivy Family ==
+//! Success states and nature-inspired accents.
 
 $ucl-ivy-light: #a9c47f;
 $ucl-ivy: #789d4a;
@@ -164,6 +170,7 @@ $ucl-forest: #275d38;
 $ucl-forest-dark: #284734;
 
 // == Secondary Brand Colors - Lake Family ==
+//! The default family for active states, links and informational UI.
 
 $ucl-lake-light: #3eb1c8;
 $ucl-lake: #007396;

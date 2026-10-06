@@ -60,7 +60,7 @@ src/
 │   ├── header.html            # Production Library website header
 │   ├── footer.html            # Site footer
 │   ├── breadcrumb.html        # Breadcrumb trail
-│   ├── child-pages-list.html  # Generated list of a section's pages
+│   ├── child-pages-list.html  # Generated index of a section, nested
 │   ├── token-table.njk        # Token Tables markup
 │   ├── libapps/               # Partials reproducing Springshare's chrome
 │   ├── meta/                  # Documentation-site chrome and tooling
@@ -122,7 +122,7 @@ A page that hand-rolls its include chain has to pick. Including the wrong one pr
 
 None of this needs a manual step. Adding a page is enough.
 
-- **Navigation.** Section landing pages and the homepage's documentation navigation are built from the folder structure. Placing a page inside a section folder is all that is required. Only a brand-new *top-level* section needs its path added to the whitelist in `src/index.html`.
+- **Navigation.** Every section landing page and the homepage's site index are built from the folder structure by `child-pages-list.html`, which nests each subsection under its landing page to any depth. Placing a page or a folder inside `src/` is all that is required. The short "most used" lists on the homepage and the Design System and Implementation indexes are the only hand-picked links.
 - **Token Tables** and `/design_system/tokens.json`, from the SCSS sources.
 - **Bootstrap's JavaScript** at `/styles/bootstrap.bundle.min.js`, beside `main.css`, copied from the same installed package the CSS is compiled from. The two cannot drift to different Bootstrap versions.
 - **`/llms.txt`**, a discovery index for agents building other projects against this design system. It lists the Design System's subsections and their pages, and the Pages groups, all derived from the folders. A page that is not guidance — a type specimen, say — sets `llms: false` in its front matter to stay out.

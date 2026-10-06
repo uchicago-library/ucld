@@ -2,6 +2,8 @@
 
 A static site documenting and demonstrating the University of Chicago Library design system, built with **Eleventy**, **Bootstrap 5 (SCSS)** and **Font Awesome**, and deployed to GitHub Pages.
 
+**Published at https://uchicago-library.github.io/ucld/** — start there to use the system rather than change it.
+
 ## What's here
 
 - **Design tokens** — colours, typography and spacing, documented on a Token Tables page that is generated from the stylesheets rather than maintained by hand.

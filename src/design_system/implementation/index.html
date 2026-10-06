@@ -1,18 +1,20 @@
 ---
 title: "Implementation"
+description: "Everything needed to build with the design system: the tokens and classes it defines, its components, and how to load it in a project."
+layout: base.njk
 ---
 
-{% include "meta/document-start.html" %}
-{% include "meta/docs-header.html" %}
+<section class="mb-5">
+  <h2>Most Used</h2>
+  <ul>
+    <li><a href="{{ '/design_system/implementation/token-tables/' | url }}">Token Tables</a> — every token and component class, with its CSS variable, SCSS variable and value. The search box in the header goes straight to it from any page.</li>
+    <li><a href="{{ '/design_system/implementation/components/' | url }}">Components</a> — live examples and markup for each component.</li>
+    <li><a href="{{ '/design_system/implementation/using-ucld/' | url }}">Using the Design System in a Project</a> — the stylesheet to load, and the rules for styling on top of it. Start here the first time.</li>
+  </ul>
+</section>
 
-{% include "breadcrumb.html" %}
-
-<main id="main-content" tabindex="-1" class="container-md py-4 mb-5">
-  <div class="col-lg-10 mx-auto">
-    <h1>Implementation</h1>
-    <p>Cheat sheet for implementation rather than rulesets.</p>
-    {% include "child-pages-list.html" %}
-  </div>
-</main>
-
-{% include "footer.html" %}
+<section class="mb-5">
+  <h2>All Implementation Pages</h2>
+  {% set showDescriptions = true %}
+  {% include "child-pages-list.html" %}
+</section>

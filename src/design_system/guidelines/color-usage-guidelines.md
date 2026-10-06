@@ -47,7 +47,7 @@ Use semantic utility classes tied to the design tokens:
 - `.text-muted` for low-emphasis metadata and helper text.
 - `.bg-success`, `.bg-warning`, `.bg-danger`, `.bg-info` only for semantic states.
 
-For all approved color families and token values, see [Design Tokens - Colors]({{ '/design_system/implementation/design-tokens-colors/' | url }}).
+For all approved color families and their values, see the [brand palette]({{ '/design_system/implementation/token-tables/' | url }}#panel-brand-colors) in the Token Tables.
 
 ## Token Reference
 

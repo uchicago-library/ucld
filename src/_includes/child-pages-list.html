@@ -1,7 +1,27 @@
+{#
+  Generated index of a section, built from the folder structure.
+
+  Lists the pages directly inside the section, and nests each subsection's own
+  index beneath its landing page, to any depth. Nothing here is maintained by
+  hand: a new page or folder appears on every index above it.
+
+  Context:
+    parentUrl        — the section to list; defaults to the current page
+    showDescriptions — when true, follows each link with its front-matter
+                       description
+#}
+{%- macro sectionIndex(pages, sectionUrl, withDescriptions) -%}
+{%- set depth = sectionUrl | urlDepth %}
 <ul>
-{% for p in collections.all | sort(false, false, 'data.title') %}
-  {% if (parentUrl or page.url) in p.url and not (p | isIndexPage) %}
-  <li><a href="{{ p.url | url }}">{{ p.data.title }}</a></li>
-  {% endif %}
-{% endfor %}
+{%- for p in pages | sort(false, false, 'data.title') %}
+  {%- if p.url and sectionUrl in p.url and p.url != sectionUrl and (p.url | urlDepth) == depth + 1 %}
+  <li>
+    <a href="{{ p.url | url }}">{{ p.data.title }}</a>
+    {%- if withDescriptions and p.data.description %} — {{ p.data.description }}{% endif %}
+    {%- if p | isIndexPage %}{{ sectionIndex(pages, p.url, withDescriptions) }}{% endif %}
+  </li>
+  {%- endif %}
+{%- endfor %}
 </ul>
+{%- endmacro %}
+{{ sectionIndex(collections.all, parentUrl or page.url, showDescriptions) }}
