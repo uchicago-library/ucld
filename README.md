@@ -9,7 +9,8 @@ A static site documenting and demonstrating the University of Chicago Library de
 - **Design tokens** — colours, typography and spacing, documented on a Token Tables page that is generated from the stylesheets rather than maintained by hand.
 - **Components** — reusable UI built on Bootstrap 5 with UChicago brand overrides.
 - **Guidelines** — how to use the system, and the research and principles behind it.
-- **Mockups** — full-page layouts used to explore and validate directions.
+- **Demonstrations** — the system rendered in place at full page width.
+- **Playground** — mockups used to explore and validate directions. Not prescriptive.
 - **A machine-readable surface** — `/llms.txt` plus a Markdown copy of every design system page, for AI agents building other projects against this system.
 
 ## Quick start
@@ -26,7 +27,7 @@ npm run build   # production build into _site/
 npm test        # build, then run the accessibility checks
 ```
 
-For prerequisites, troubleshooting and the full script list, see [Setup & Installation](src/methodology/setup.md).
+For prerequisites, troubleshooting and the full script list, see [Setup & Installation](src/methodology/setup.md). Before opening a pull request, run through [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Documentation
 

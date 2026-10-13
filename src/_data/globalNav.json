@@ -9,7 +9,7 @@
                     "links": [
                         {
                             "text": "Ask Us",
-                            "href": "/design_mockups/lib-website/ask-us/"
+                            "href": "/playground/lib-website/ask-us/"
                         },
                         {
                             "text": "Help Guides",
@@ -17,7 +17,7 @@
                         },
                         {
                             "text": "Contacts",
-                            "href": "/design_mockups/lib-website/contacts/"
+                            "href": "/playground/lib-website/contacts/"
                         }
                     ]
                 },

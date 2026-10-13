@@ -6,7 +6,7 @@ layout: base.njk
 
 ## Header
 
-Two bands. `.logo-bar` carries the logo, the shortcut links and the mobile toggle; `.global-navbar` carries the dropdown menus and the search field. Link content comes from `src/_data/globalNav.json`, not from the markup, so the same partial renders whatever that file defines. See it rendered in the [site chrome demo]({{ '/pages/global/site-chrome/' | url }}).
+Two bands. `.logo-bar` carries the logo, the shortcut links and the mobile toggle; `.global-navbar` carries the dropdown menus and the search field. Link content comes from `src/_data/globalNav.json`, not from the markup, so the same partial renders whatever that file defines. See it rendered in the [site chrome demo]({{ '/demos/global/site-chrome/' | url }}).
 
 ```html
 <header role="banner">

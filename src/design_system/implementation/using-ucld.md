@@ -1,6 +1,6 @@
 ---
-title: "Using the Design System in a Project"
-description: "How to load the design system in another project, and where the rules for styling on top of it live."
+title: "Getting Started"
+description: "How to load the design system in another project, every file it publishes, and where the rules for styling on top of it live."
 layout: base.njk
 ---
 
@@ -23,8 +23,32 @@ Load the favicon, the stylesheet and the icon set in the `<head>`, and Bootstrap
 
 The two files from this site always serve its current build. There are no versions to pin.
 
-LibGuides and other Springshare pages load a different stylesheet: see [Styling Springshare Pages]({{ '/design_system/implementation/springshare/' | url }}).
+## Published files
+
+Everything the build publishes under `https://uchicago-library.github.io/ucld/styles/`. A project loads one stylesheet, never both.
+
+| File | Load it when |
+| --- | --- |
+| `main.css` | Your project controls its own `<head>`. The full product stylesheet: Bootstrap with the design system's tokens, components and typeface. |
+| `main-libapps.css` | The page is served by Springshare, which loads its own Bootstrap first. An override sheet, not a full build; see [Styling Springshare Pages]({{ '/design_system/implementation/springshare/' | url }}). |
+| `bootstrap.bundle.min.js` | Alongside either stylesheet, for components that need JavaScript: dropdowns, collapse, accordions, modals. |
+| `meta.css` | Never. It styles this documentation site and is not part of the product. |
+
+Each file has a `.map` beside it, so browser developer tools show the SCSS source a rule came from.
 
 ## Styling on top of it
 
 Take values from the [Token Tables]({{ '/design_system/implementation/token-tables/' | url }}) rather than writing them out. The rules for your own CSS are the ones this project follows, in [Conventions]({{ '/methodology/conventions/' | url }}): [BEM]({{ '/methodology/conventions/' | url }}#css-classes-bem), [IDs versus classes]({{ '/methodology/conventions/' | url }}#ids-versus-classes) and [Writing CSS]({{ '/methodology/conventions/' | url }}#writing-css).
+
+## Before you ship
+
+Each item links to the page that holds the rule.
+
+- One stylesheet is loaded: `main.css`, or `main-libapps.css` on Springshare. Bootstrap's own CSS is not loaded beside it.
+- The header and footer use the markup in [Site Chrome]({{ '/design_system/implementation/site-chrome/' | url }}).
+- Each page starts from one of the [Page Layouts]({{ '/design_system/implementation/layouts/' | url }}).
+- No value that exists as a token is written out by hand. Search the [Token Tables]({{ '/design_system/implementation/token-tables/' | url }}).
+- A Bootstrap component class is used before utilities, and utilities before your own CSS. See [Writing CSS]({{ '/methodology/conventions/' | url }}#writing-css).
+- Each view has at most one `.btn-primary`. See [Components]({{ '/design_system/implementation/components/' | url }}#section-buttons).
+- The page meets the [WCAG 2.1 AA requirements]({{ '/design_system/foundation/design-standards/' | url }}#accessibility-wcag-21-level-aa): one `<main>` with a skip link to it, a name on every form control, `alt` on every image, and no skipped heading levels.
+- Interactive elements carry the `data-ga-*` attributes in [Event Tracking]({{ '/design_system/implementation/event-tracking/' | url }}), if the site reports to GA4.

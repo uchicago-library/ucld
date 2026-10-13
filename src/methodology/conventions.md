@@ -52,7 +52,7 @@ Markdown pages are processed by Nunjucks before Markdown, so any literal templat
 
 ## Writing CSS
 
-These apply to any project styling on top of the design system, not only to this one. [Using the Design System in a Project]({{ '/design_system/implementation/using-ucld/' | url }}) links here, along with the BEM and IDs sections above.
+These apply to any project styling on top of the design system, not only to this one. [Getting Started]({{ '/design_system/implementation/using-ucld/' | url }}) links here, along with the BEM and IDs sections above.
 
 - **Never hardcode a value** that exists as a token.
 - **Prefer the highest-level class available** — a Bootstrap component class over utilities, utilities over bespoke CSS.
@@ -75,11 +75,11 @@ Keep it minimal. JavaScript is justified for initialising Bootstrap behaviour th
 | Content | Location |
 | --- | --- |
 | Component documentation | `src/design_system/implementation/` |
-| Live demo of a pattern | `src/pages/<group>/`, beside an `index.html` for the group |
+| Live demo of a pattern | `src/demos/<group>/`, beside an `index.html` for the group |
 | Usage guidance | `src/design_system/guidelines/` |
 | Principles and research | `src/design_system/foundation/` |
 | Process documentation | `src/methodology/` |
-| Experimental mockup | `src/design_mockups/<topic>/` |
+| Experimental mockup | `src/playground/<topic>/` |
 | Component SCSS | `src/styles/components/_name.scss`, imported in `main.scss` |
 | Documentation-only SCSS | `src/styles/meta/_name.scss`, imported in `meta.scss` |
 | Global element styles | `src/styles/base/_global.scss` |
@@ -100,4 +100,4 @@ What the build cannot decide still needs you:
 - **No console errors**, in current Chrome, Firefox and Safari.
 - **Nothing a consumer may use is removed or renamed** — no class, token or custom property. Projects load the published stylesheet directly, with no version to pin, so a removal reaches them on the next deploy.
 
-Pages under `src/pages/libapps/` reproduce Springshare's own markup so the LibApps stylesheet can be tested against it. The accessibility check reports findings there as warnings, and they should not be resolved by editing the reproduction.
+Pages under `src/demos/libapps/` reproduce Springshare's own markup so the LibApps stylesheet can be tested against it. The accessibility check reports findings there as warnings, and they should not be resolved by editing the reproduction.

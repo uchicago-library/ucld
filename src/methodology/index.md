@@ -22,6 +22,7 @@ Documentation drifts when two places can hold the same fact. The rule here is th
 | **Generated output** | Token Tables, `tokens.json`, `/llms.txt`, the Markdown page copies | Anyone consuming the system, including agents |
 | **Design system pages** | `design_system/foundation/`, `guidelines/`, `implementation/` | Designers and developers using the system |
 | **Methodology** | `src/methodology/` (this section) | People working *on* this project |
+| **Contributor checklist** | `CONTRIBUTING.md` in the repository root | People opening a pull request. Links here, states nothing of its own |
 | **Agent instructions** | `CLAUDE.md` in the repository root | AI agents working on this project |
 
 Three rules follow from it:

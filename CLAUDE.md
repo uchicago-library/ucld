@@ -42,7 +42,7 @@ These fail quietly. None of them produces an error you would notice.
 
 There are two, and the wrong one still builds and still looks plausible.
 
-- `meta/docs-header.html` is this documentation site's header. Every page that documents the system uses it, including the section index pages inside `design_mockups/` and `pages/` — those are navigation, not specimens. `base.njk` includes it, so pages using the layout are already correct.
+- `meta/docs-header.html` is this documentation site's header. Every page that documents the system uses it, including the section index pages inside `playground/` and `demos/` — those are navigation, not specimens. `base.njk` includes it, so pages using the layout are already correct.
 - `header.html` is the production Library website header. Only the mockups and exported pages themselves use it.
 
 The split is what the page *is*, not which folder it sits in. Only a page that hand-rolls its include chain has to choose, and copying a nearby page is how the wrong one spreads.
@@ -84,6 +84,7 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 
 - The path prefix `/ucld/` is set in `.eleventy.js`. The dev server therefore serves at **http://localhost:8080/ucld/**, not the bare port.
 - There are **no unit tests**. `npm test` runs the build and the accessibility checks.
+- Eleventy never cleans `_site/`. After moving or renaming a page, the old output stays there, is still served locally and is still checked by `npm run a11y`. Delete `_site/` and rebuild before trusting either. CI builds from scratch, so it never sees the stale copy.
 
 ---
 
@@ -93,8 +94,8 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 
 - **Never modify `_site/`.** It is generated. All work happens in `src/`.
 - **Code examples depend on the format.** A reference `.html` page carries none: it demonstrates itself, and its generated Markdown twin already holds the real markup. A prose `.md` page has no twin, so a short snippet is the only way it can supply markup — use one where the reader would otherwise have to guess which part of a page is structural.
-- **Live demos go in `src/pages/`, not on a documentation page.** A documentation page states the rule and shows the markup; the demo shows it working at full page width.
-- `src/pages/` is for **demonstration** — our own patterns rendered in place, and vendor markup reproduced so the stylesheets can be validated against it. `src/design_mockups/` is for **experiments**, which by default are not prescriptive.
+- **Live demos go in `src/demos/`, not on a documentation page.** A documentation page states the rule and shows the markup; the demo shows it working at full page width.
+- `src/demos/` is for **demonstration** — our own patterns rendered in place, and vendor markup reproduced so the stylesheets can be validated against it. `src/playground/` is for **experiments**, which by default are not prescriptive.
 
 ### HTML
 
@@ -123,7 +124,7 @@ The split is what the page *is*, not which folder it sits in. Only a page that h
 - Every `<img>` needs `alt`. Use `alt=""` for decorative images — omitting the attribute is the error.
 - Do not skip heading levels. Bootstrap's card examples use `<h5 class="card-title">`, which skips if the card sits under an `h2`.
 - IDs must be unique per rendered page. Watch partials included more than once.
-- Pages under `src/pages/libapps/` reproduce Springshare's own markup so the LibApps stylesheet can be validated against it. Findings there are warnings and must not be "fixed" by editing the reproduction.
+- Pages under `src/demos/libapps/` reproduce Springshare's own markup so the LibApps stylesheet can be validated against it. Findings there are warnings and must not be "fixed" by editing the reproduction.
 
 ### Bootstrap pitfalls
 

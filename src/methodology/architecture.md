@@ -10,8 +10,8 @@ layout: base.njk
 - **Elements** (buttons, forms, inputs) are styled with Bootstrap classes first. Add a custom class only when Bootstrap genuinely cannot express the need.
 - **Global components** (header, footer, breadcrumb) are HTML partials in `src/_includes/`.
 - **Design system pages** (`src/design_system/`) document the system: tokens, components, and usage guidance.
-- **Demonstration pages** (`src/pages/`) show the system in place at full page width: our own patterns, and markup reproduced from real applications so the stylesheets can be validated against the HTML they actually have to style. A documentation page states a rule and shows the markup; the demo here shows it working.
-- **Mockup pages** (`src/design_mockups/`) are experiments and, by default, not prescriptive. Page-specific styling goes in a `<style>` block at the top of the file.
+- **Demonstration pages** (`src/demos/`) show the system in place at full page width: our own patterns, and markup reproduced from real applications so the stylesheets can be validated against the HTML they actually have to style. A documentation page states a rule and shows the markup; the demo here shows it working.
+- **Playground pages** (`src/playground/`) are experiments and, by default, not prescriptive. Page-specific styling goes in a `<style>` block at the top of the file.
 
 ## The Three Layers of Styling
 
@@ -72,9 +72,9 @@ src/
 │   ├── implementation/        # Components, tokens, typography, layouts
 │   │   └── token-tables.html  # Generated token reference
 │   └── tokens.json.njk        # Machine-readable token endpoint
-├── design_mockups/            # Experiments, grouped by topic. Not prescriptive
+├── playground/                # Experiments, grouped by topic. Not prescriptive
 ├── methodology/               # How to work on this project (this folder)
-├── pages/                     # Demonstrations of the system in place
+├── demos/                     # Demonstrations of the system in place
 ├── styles/
 │   ├── _variables.scss        # Level 1 and 2 tokens, Bootstrap overrides
 │   ├── main.scss              # Product entry point
@@ -111,7 +111,7 @@ A few pages still hand-roll the include chain instead of using the layout, becau
 
 The site uses one of two headers, and which one a page gets is a deliberate choice rather than a default. The dividing line is not the folder but what the page *is*.
 
-- `meta/docs-header.html` is this documentation site's own header. Every page that documents the system uses it: `design_system/`, `methodology/`, the home page, and the index pages that introduce a section — including the ones inside `design_mockups/` and `pages/`, which are navigation rather than specimens. `base.njk` supplies it, so a page using the layout is already correct.
+- `meta/docs-header.html` is this documentation site's own header. Every page that documents the system uses it: `design_system/`, `methodology/`, the home page, and the index pages that introduce a section — including the ones inside `playground/` and `demos/`, which are navigation rather than specimens. `base.njk` supplies it, so a page using the layout is already correct.
 - `header.html` is the production Library website header. Only the mockups and exported pages themselves use it, because they show a real Library interface and need its real chrome to be worth looking at.
 
 `docs-header.html` lives in `_includes/meta/` and is styled from `styles/meta/_docs-header.scss`, following the rule that anything existing only to document the system stays out of the product. It mirrors the production header visually so the two read as one site.
@@ -125,7 +125,7 @@ None of this needs a manual step. Adding a page is enough.
 - **Navigation.** Every section landing page and the homepage's site index are built from the folder structure by `child-pages-list.html`, which nests each subsection under its landing page to any depth. Placing a page or a folder inside `src/` is all that is required. The short "most used" lists on the homepage and the Design System and Implementation indexes are the only hand-picked links.
 - **Token Tables** and `/design_system/tokens.json`, from the SCSS sources.
 - **Bootstrap's JavaScript** at `/styles/bootstrap.bundle.min.js`, beside `main.css`, copied from the same installed package the CSS is compiled from. The two cannot drift to different Bootstrap versions.
-- **`/llms.txt`**, a discovery index for agents building other projects against this design system. It lists the Design System's subsections and their pages, and the Pages groups, all derived from the folders. A page that is not guidance — a type specimen, say — sets `llms: false` in its front matter to stay out.
+- **`/llms.txt`**, a discovery index for agents building other projects against this design system. It lists the Design System's subsections and their pages, and the Demonstrations groups, all derived from the folders. A page that is not guidance — a type specimen, say — sets `llms: false` in its front matter to stay out.
 - **A Markdown copy of every `design_system/` page**, served at `/design_system/<page>.md`. Prose pages are copied verbatim; reference pages get a generated twin carrying each section's real markup, built from the rendered output so it cannot drift.
 
 Because the Markdown copies and `/llms.txt` publish the `description` front matter, every page needs a real one-line summary rather than a placeholder.

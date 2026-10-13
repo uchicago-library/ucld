@@ -17,14 +17,14 @@ const path = require("path");
 
 const SITE = "_site";
 
-// Pages under pages/libapps/ are reproductions of Springshare's own LibGuides
+// Pages under demos/libapps/ are reproductions of Springshare's own LibGuides
 // output, kept so the LibApps stylesheet can be validated against the markup
 // it actually has to style. Their structure is not ours to change, so the
 // document-level checks that would ask us to edit them are skipped.
-// The trailing segment matters: pages/libapps/index.html is our own section
+// The trailing segment matters: demos/libapps/index.html is our own section
 // landing page and is held to the full standard, while the reproductions each
 // live in their own subdirectory below it.
-const VENDOR_REPRODUCTION = /^pages[/\\]libapps[/\\][^/\\]+[/\\]/;
+const VENDOR_REPRODUCTION = /^demos[/\\]libapps[/\\][^/\\]+[/\\]/;
 
 const findings = [];
 

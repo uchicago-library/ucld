@@ -4,7 +4,7 @@ description: "The three standard page layouts, when each applies, and the markup
 layout: base.njk
 ---
 
-Three layouts cover nearly every page. See them rendered at full width in the [layouts demo]({{ '/pages/global/layouts/' | url }}).
+Three layouts cover nearly every page. See them rendered at full width in the [layouts demo]({{ '/demos/global/layouts/' | url }}).
 
 ## Main column with right sidebar
 

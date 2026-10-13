@@ -44,9 +44,9 @@ The overrides target LibGuides specifically: guide pages, the A–Z database fin
 
 ## Validating a change
 
-Reproductions of Springshare's own output live under `src/pages/libapps/`. They exist so this stylesheet can be tested against the markup it actually has to style, and they load `main-libapps.css` rather than `main.css`.
+Reproductions of Springshare's own output live under `src/demos/libapps/`. They exist so this stylesheet can be tested against the markup it actually has to style, and they load `main-libapps.css` rather than `main.css`.
 
 Two rules apply:
 
 - The markup in those reproductions is Springshare's. Accessibility findings there are reported as warnings and must not be resolved by editing the reproduction — see [Conventions]({{ '/methodology/conventions/' | url }}).
-- Layouts we propose ourselves are mockups, not reproductions. They live under [Guides mockups]({{ '/design_mockups/guides/' | url }}) and are held to the full accessibility standard.
+- Layouts we propose ourselves are mockups, not reproductions. They live under [Guides mockups]({{ '/playground/guides/' | url }}) and are held to the full accessibility standard.

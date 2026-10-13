@@ -13,7 +13,7 @@ eleventyExcludeFromCollections: true
   this file. A page sets `llms: false` in its front matter to stay out.
 
   Audience: agents building OTHER projects against this design system. Agents
-  working ON the design system have the repo, so methodology/ and mockups are
+  working ON the design system have the repo, so methodology/ and the playground are
   not listed here at all.
 
   `| ascii | safe`: this output is plain text. `safe` stops Nunjucks turning
@@ -21,7 +21,7 @@ eleventyExcludeFromCollections: true
   characters that mojibake when Pages serves text/plain without a charset.
 -#}
 {%- set dsUrl = '/design_system/' %}
-{%- set pagesUrl = '/pages/' -%}
+{%- set demosUrl = '/demos/' -%}
 # {{ site.name | ascii | safe }}
 
 > {{ site.summary | ascii | safe }}
@@ -56,11 +56,11 @@ bespoke CSS. To load the design system in a project, start with
 Every token and documented class is also published as JSON at
 {{ site.origin }}{{ '/design_system/tokens.json' | url }}
 
-## [Pages]({{ site.origin }}{{ pagesUrl | url }})
+## [Demonstrations]({{ site.origin }}{{ demosUrl | url }})
 
 Complete pages rendered with the system, for seeing it in place.
 {% for group in collections.all | sort(false, false, 'data.title') %}
-{%- if pagesUrl in group.url and group | isIndexPage and group.url != pagesUrl %}
+{%- if demosUrl in group.url and group | isIndexPage and group.url != demosUrl %}
 - [{{ group.data.title | ascii | safe }}]({{ site.origin }}{{ group.url | url }})
 {%- endif %}
 {%- endfor %}

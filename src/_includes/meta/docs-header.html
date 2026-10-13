@@ -8,8 +8,8 @@
   Which header a page gets:
   - This one, on the documentation site — design_system/, methodology/, the
     home page, and the index pages that introduce a section.
-  - header.html, the production Library website header, on the mockups and
-    exported pages themselves. Those show a real Library interface and need
+  - header.html, the production Library website header, on the playground mockups
+    and demonstration pages themselves. Those show a real Library interface and need
     its real chrome to be worth looking at.
 
   Ids are prefixed docs- so they cannot collide with the production header,
@@ -17,11 +17,11 @@
 #}
 {%- set tokenTablesUrl = "/design_system/implementation/token-tables/" %}
 {%- set docsSections = [
-  { label: "Design System", url: "/design_system/" },
-  { label: "Mockups",       url: "/design_mockups/" },
-  { label: "Pages",         url: "/pages/" },
-  { label: "Methodology",   url: "/methodology/" },
-  { label: "Token Tables",  url: tokenTablesUrl }
+  { label: "Design System",  url: "/design_system/" },
+  { label: "Demos",          url: "/demos/" },
+  { label: "Playground",     url: "/playground/" },
+  { label: "Methodology",    url: "/methodology/" },
+  { label: "Token Tables",   url: tokenTablesUrl }
 ] %}
 <header id="docs-header" role="banner">
   <div class="logo-bar bg-white">
@@ -56,15 +56,18 @@
         {#- Developers return to the tokens far more than to any other page, so
             every page can search them. It is a plain GET to Token Tables, which
             reads ?q= and opens filtered. Left off that page, whose own search
-            box does the same job. #}
+            box does the same job.
+            Uses the production header's .global-navbar-search, so restyling
+            that component restyles this one too. #}
         {%- if page.url != tokenTablesUrl %}
-        <form class="docs-header-search d-flex gap-2 px-3 py-2 px-md-0 ms-md-auto" role="search" action="{{ tokenTablesUrl | url }}" method="get">
+        <form class="global-navbar-search ms-md-auto mt-3 mt-md-0" role="search" action="{{ tokenTablesUrl | url }}" method="get">
           <label class="visually-hidden" for="docs-header-search">Search tokens and classes</label>
-          <input class="form-control form-control-sm" type="search" id="docs-header-search" name="q" placeholder="Search tokens">
-          <button class="btn btn-sm btn-light" type="submit">
-            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-            <span class="visually-hidden">Search</span>
-          </button>
+          <div class="global-navbar-search-field">
+            <input class="form-control form-control-sm" type="search" id="docs-header-search" name="q" placeholder="Tokens">
+            <button class="global-navbar-search-button" type="submit" aria-label="Search">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </button>
+          </div>
         </form>
         {%- endif %}
       </div>
