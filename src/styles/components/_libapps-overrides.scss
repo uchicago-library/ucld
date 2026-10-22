@@ -607,7 +607,7 @@ div#s-lg-guide-main,
     }
 }
 // Vertical left guide tabs
-#s-lg-guide-tabs{
+.s-lg-tabs-side #s-lg-guide-tabs{
     // Active tab indicator
     li.nav-item.active {
             border-left: 4px solid var(--bs-primary) !important;
